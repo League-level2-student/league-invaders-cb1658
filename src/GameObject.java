@@ -18,4 +18,26 @@ public class GameObject {
 	public void update() {
 		
 	}
+	
+	public int getX() {
+		return this.x;
+	}
+	public int getY() {
+		return this.y;
+	}
+	public int getWidth() {
+		return this.width;
+	}
+	public int getHeight() {
+		return this.height;
+	}
+	public int getSpeed() {
+		return this.speed;
+	}
+	public boolean getActive() {
+		return this.isActive;
+	}
+	public void setActivity(boolean b) {
+		this.isActive = b;
+	}
 }
