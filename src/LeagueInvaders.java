@@ -37,15 +37,8 @@ public class LeagueInvaders {
 
 /* DEVELOPMENT VERSION LIST (for the fun of it)
  * 
- * v0.0.0: Runner
- * v0.0.1: Game Background
- * v0.0.2: State Change
- * v0.0.3: Text
- * v0.1.0: Timer
- * v0.1.1: Key Detection
- * v0.2.0: Rocket Draw
- * v0.2.1: Rocket Variables Encapsulated
- * v0.2.2: Rocket Movement
- * v0.2.3: ObjectManager Class
+ * v0.0: Menu
+ * v0.1: Key Detection
+ * v0.2: Rocket/ObjectManager
  * 
  */
