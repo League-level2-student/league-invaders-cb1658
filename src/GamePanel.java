@@ -27,6 +27,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	Rocketship rocket = new Rocketship(250,700,50,50);
 	
+	
+	
 	ObjectManager om = new ObjectManager(rocket);
 	
 	public GamePanel() {
@@ -77,6 +79,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	public void drawGameState(Graphics g) {
 		g.setColor(new Color(8, 1, 55));
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
+		
 		om.draw(g);
 		
 	}

@@ -8,6 +8,7 @@ public class ObjectManager {
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	
 	public ObjectManager(Rocketship r) {
+		addAlien();
 		this.rocket = r;
 	}
 	
@@ -15,7 +16,7 @@ public class ObjectManager {
 		projectiles.add(p);
 	}
 	public void addAlien() {
-		aliens.add(new Alien(new Random().nextInt(LeagueInvaders.WIDTH),0,50,50));
+		aliens.add(new Alien(new Random().nextInt(LeagueInvaders.WIDTH),0,80,50));
 	}
 	public void update() {
 		for(int i = 0; i<aliens.size(); i++) {
