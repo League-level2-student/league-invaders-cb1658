@@ -49,8 +49,12 @@ public class LeagueInvaders {
  * v1.0-pre1: Collision detection added but it doesn't work
  * v1.0-pre2: Collision detection works but now when you die pressing enter makes it go from MENU to END forever
  * v1.0: Bugs fixed and score added
+ * v1.0.1: Alien wave 1 added
  * 
  * THINGS TO BE DONE: 
- * -Add waves
+ * 
+ * -Add explosion animation (v1.0.2)
+ * -Add waves (v1.1)
+ * -Add different aliens (v1.2)
  * 
  */

@@ -18,7 +18,7 @@ public class Rocketship extends GameObject{
 	
 	public Rocketship(int x, int y, int width, int height) {
 		super(x, y, width, height);
-		this.speed = 5;
+		this.speed = 2;
 		collisionBox = new Rectangle(x,y,width,height);
 		if(needImage) {
 			loadImage("Photoshop_rocket.png");
@@ -35,7 +35,7 @@ public class Rocketship extends GameObject{
 	        }
 	        needImage = false;
 	    }
-	}
+	}  
 	
 	public Projectile getProjectile() {
         return new Projectile(x+width/2, y, 10, 10);

@@ -60,6 +60,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	public void updateMenuState() {
 		rocket.setActivity(true);
+		om.gone();
 	}
 	
 	public void updateGameState() {

@@ -102,9 +102,34 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 	}
+	
+	public void gone() {
+		for(int i = aliens.size()-1; i >= 0; i--) {
+			
+				aliens.remove(i);
+			
+		}
+		for(int i = projectiles.size()-1; i >= 0; i--) {
+			
+				projectiles.remove(i);
+			
+		}
+	}
+	
+	public void alienWave1() {
+		for(int i = 0; i < 25; i++) {
+			addAlien();
+		}
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		addAlien();
+		
+		int rand = new Random().nextInt(100);
+		if(rand < 3) {
+			alienWave1();
+		}
 	}
 }
