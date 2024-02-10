@@ -27,7 +27,6 @@ public class LeagueInvaders {
 		frame.add(gp);
 		gp.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		frame.pack();
-		//frame.setSize(WIDTH, HEIGHT);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(gp);
@@ -39,12 +38,14 @@ public class LeagueInvaders {
  * 
  * v0.0: Menu
  * v0.1: Key Detection
- * v0.2: Rocket
- * v0.2.1: ObjectManager
- * v0.2.2: Images
- * v0.2.3: Rocket Movement
  * 
- * THINGS TO DO:
- * -Fix bounds on rocket
+ * v0.2.0: Rocket
+ * v0.2.1: ObjectManager
+ * v0.2.2: Images (Rocket, Alien, Projectile)
+ * v0.2.3: Rocket Movement Improvement
+ * 
+ * v0.3.0: Falling Aliens/Projectiles Added
+ * 
+ * v1.0.0-pre1: Collision detection added but it doesn't work
  * 
  */

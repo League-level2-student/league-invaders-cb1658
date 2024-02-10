@@ -12,7 +12,7 @@ public class Star extends GameObject{
 		// TODO Auto-generated constructor stub
 	}
 	public void draw(Graphics g) {
-		g.setColor(Color.WHITE);
+		g.setColor(new Color(new Random().nextInt(75)+180,new Random().nextInt(75)+180,new Random().nextInt(75)+180));
 		g.fillOval(x, y, width,height);
 	}
 	

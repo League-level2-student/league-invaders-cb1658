@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
@@ -15,7 +16,8 @@ public class Projectile extends GameObject{
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		
-		speed = 0;
+		collisionBox = new Rectangle(x,y,width,height);
+		speed = 15;
 		
 		if(needImage) {
 			loadImage("Photoshop_rocket.png");
@@ -44,6 +46,7 @@ public class Projectile extends GameObject{
 	}
 	public void update() {
 		y-=speed;
+		super.update();
 	}
 	public int getX() {
 		return this.x;
@@ -65,6 +68,9 @@ public class Projectile extends GameObject{
 	}
 	public void setActivity(boolean b) {
 		this.isActive = b;
+	}
+	public Rectangle getBox() {
+		return this.collisionBox;
 	}
 
 }

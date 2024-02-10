@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
@@ -14,7 +15,7 @@ public class Alien extends GameObject{
 		super(x, y, width, height);
 
 		speed = 1;
-		
+		collisionBox = new Rectangle(x,y,width,height);
 		if(needImage) {
 			loadImage("Alien.png");
 		}
@@ -34,6 +35,7 @@ public class Alien extends GameObject{
 	
 	public void update() {
 		y += speed;
+		super.update();
 	}
 	public void draw(Graphics g) {
 		if (gotImage) {
@@ -64,5 +66,8 @@ public class Alien extends GameObject{
 	}
 	public void setActivity(boolean b) {
 		this.isActive = b;
+	}
+	public Rectangle getBox() {
+		return this.collisionBox;
 	}
 }

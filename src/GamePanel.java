@@ -17,7 +17,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	final int GAME = 1;
 	final int END = 2;
 	
-	
+	Timer alienSpawn;
 	
 	int currentState = 0;
 	
@@ -35,6 +35,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	public GamePanel() {
 		frameDraw = new Timer(1000/500, this);
 		frameDraw.start();
+	}
+	
+	public void startGame() {
+		alienSpawn = new Timer(1000, om);
+	    alienSpawn.start();
 	}
 	
 	@Override
@@ -59,6 +64,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	public void updateGameState() {
 		om.update();
+		
+		if(!rocket.getActive()) {
+			currentState = END;
+		}
 	}
 	
 	public void updateEndState() {
@@ -132,6 +141,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			switch(currentState) {
 			case MENU:
 				currentState++;
+				startGame();
 				break;
 			case END:
 				currentState = MENU;
@@ -141,6 +151,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 0) {
 			JOptionPane.showMessageDialog(null, "As the creator of BETTER INVADERS I must inform you not to die.");
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 1) {
+			om.addProjectile(rocket.getProjectile());
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 2) {

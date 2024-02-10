@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
@@ -17,8 +18,8 @@ public class Rocketship extends GameObject{
 	
 	public Rocketship(int x, int y, int width, int height) {
 		super(x, y, width, height);
-		this.speed = 1;
-		
+		this.speed = 5;
+		collisionBox = new Rectangle(x,y,width,height);
 		if(needImage) {
 			loadImage("Photoshop_rocket.png");
 		}
@@ -35,17 +36,25 @@ public class Rocketship extends GameObject{
 	        needImage = false;
 	    }
 	}
+	
+	public Projectile getProjectile() {
+        return new Projectile(x+width/2, y, 10, 10);
+	}
+	public Rectangle getBox() {
+		return this.collisionBox;
+	}
+	
 	public void update() {
-		if(isMovingUp) {
+		if(isMovingUp && getY() >= getSpeed()) {
 			up();
 		}
-		if(isMovingDown) {
+		if(isMovingDown && getY() <= LeagueInvaders.HEIGHT-getHeight()) {
 			down();
 		}
-		if(isMovingLeft) {
+		if(isMovingLeft && getX() >= getSpeed()) {
 			left();
 		}
-		if(isMovingRight) {
+		if(isMovingRight && getX() <= LeagueInvaders.WIDTH-getWidth()) {
 			right();
 		}
 	}
