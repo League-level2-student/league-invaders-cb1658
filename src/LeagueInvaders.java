@@ -39,6 +39,8 @@ public class LeagueInvaders {
  * 
  * v0.0: Menu
  * v0.1: Key Detection
- * v0.2: Rocket/ObjectManager
+ * v0.2: Rocket
+ * v0.2.1: ObjectManager
+ * v0.2.2: IMAGES (IN PROGRESS)
  * 
  */
