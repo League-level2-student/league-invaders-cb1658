@@ -15,8 +15,7 @@ public class Projectile extends GameObject{
 	public Projectile(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
-		
-		collisionBox = new Rectangle(x,y,width,height);
+
 		speed = 15;
 		
 		if(needImage) {
@@ -46,6 +45,7 @@ public class Projectile extends GameObject{
 	}
 	public void update() {
 		y-=speed;
+		collisionBox.setBounds(x, y, width, height);
 		super.update();
 	}
 	public int getX() {

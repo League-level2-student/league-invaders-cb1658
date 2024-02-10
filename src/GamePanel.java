@@ -59,7 +59,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void updateMenuState() {
-		
+		rocket.setActivity(true);
 	}
 	
 	public void updateGameState() {
@@ -84,9 +84,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		g.drawString("Press ENTER to start!", 380, 500);
 		g.drawString("Press SPACE if you need help!", 310, 600);
 		
+		om.setScore();
+		
 	}
 
 	public void drawGameState(Graphics g) {
+
 		g.setColor(new Color(8, 1, 55));
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
 		
@@ -114,9 +117,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			updateMenuState();
 			break;
 		case GAME:
+			
 			updateGameState();
+			
 			break;
 		case END:
+			//rocket = new Rocketship(250,700,80,80);
+			
+			rocket.setActivity(true);
+			rocket.setX(250);
+			rocket.setY(700);
+			
 			updateEndState();
 			break;
 		}

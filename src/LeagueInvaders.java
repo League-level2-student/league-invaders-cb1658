@@ -44,8 +44,13 @@ public class LeagueInvaders {
  * v0.2.2: Images (Rocket, Alien, Projectile)
  * v0.2.3: Rocket Movement Improvement
  * 
- * v0.3.0: Falling Aliens/Projectiles Added
+ * v0.3: Falling Aliens/Projectiles Added
  * 
- * v1.0.0-pre1: Collision detection added but it doesn't work
+ * v1.0-pre1: Collision detection added but it doesn't work
+ * v1.0-pre2: Collision detection works but now when you die pressing enter makes it go from MENU to END forever
+ * v1.0: Bugs fixed and score added
+ * 
+ * THINGS TO BE DONE: 
+ * -Add waves
  * 
  */

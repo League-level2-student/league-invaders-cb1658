@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,8 @@ public class ObjectManager implements ActionListener{
 	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	ArrayList<Star> stars = new ArrayList<Star>();
+	
+	int score = 0;
 	
 	public ObjectManager(Rocketship r) {
 		for(int i = 0; i < 200; i++) {
@@ -59,6 +62,16 @@ public class ObjectManager implements ActionListener{
 			star.draw(g);
 		}
 		
+		g.setFont(new Font("Impact", Font.PLAIN, 40));
+		g.drawString("Score: "+getScore(),25 ,50);
+		
+	}
+	public void setScore() {
+		score = 0;
+	}
+	
+	public int getScore() {
+		return this.score;
 	}
 	
 	public void checkCollision() {
@@ -67,6 +80,7 @@ public class ObjectManager implements ActionListener{
 				if(proj.getBox().intersects(alien.getBox())) {
 					alien.setActivity(false);
 					proj.setActivity(false);
+					score++;
 				}
 			}
 			if(rocket.getBox().intersects(alien.getBox())) {

@@ -15,7 +15,7 @@ public class Alien extends GameObject{
 		super(x, y, width, height);
 
 		speed = 1;
-		collisionBox = new Rectangle(x,y,width,height);
+
 		if(needImage) {
 			loadImage("Alien.png");
 		}
@@ -35,6 +35,7 @@ public class Alien extends GameObject{
 	
 	public void update() {
 		y += speed;
+		collisionBox.setBounds(x, y, width, height);
 		super.update();
 	}
 	public void draw(Graphics g) {

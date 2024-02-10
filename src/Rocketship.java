@@ -57,6 +57,7 @@ public class Rocketship extends GameObject{
 		if(isMovingRight && getX() <= LeagueInvaders.WIDTH-getWidth()) {
 			right();
 		}
+		collisionBox.setBounds(x, y, width, height);
 	}
 
 	public void draw(Graphics g) {
@@ -127,5 +128,11 @@ public class Rocketship extends GameObject{
 	}
 	public void setRight(boolean b) {
 		this.isMovingRight = b; 
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public void setY(int y) {
+		this.y=y;
 	}
 }
