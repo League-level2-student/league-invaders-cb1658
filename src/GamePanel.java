@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Font tf = new Font("Impact", Font.PLAIN, 100);
 	Font of = new Font("Impact", Font.PLAIN, 40);
 	
-	Rocketship rocket = new Rocketship(250,700,50,50);
+	Rocketship rocket = new Rocketship(250,700,80,80);
 	
 	
 	

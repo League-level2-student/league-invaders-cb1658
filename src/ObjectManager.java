@@ -9,6 +9,7 @@ public class ObjectManager {
 	
 	public ObjectManager(Rocketship r) {
 		addAlien();
+		addProjectile(new Projectile(100,100,20,30));
 		this.rocket = r;
 	}
 	
