@@ -6,11 +6,18 @@ public class ObjectManager {
 	Rocketship rocket;
 	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
+	ArrayList<Star> stars = new ArrayList<Star>();
 	
 	public ObjectManager(Rocketship r) {
 		addAlien();
-		addProjectile(new Projectile(100,100,20,30));
+		addProjectile(new Projectile(100,100,15,25));
+		for(int i = 0; i < 200; i++) {
+			addStar();
+		}
 		this.rocket = r;
+	}
+	public void addStar() {
+		stars.add(new Star(new Random().nextInt(1000), new Random().nextInt(1000), 5, 5));
 	}
 	
 	public void addProjectile(Projectile p) {
@@ -34,16 +41,21 @@ public class ObjectManager {
 				projectiles.get(i).setActivity(false);
 			}
 		}
+		rocket.update();
 	}
 	
 	public void draw(Graphics g) {
 		rocket.draw(g);
-		for(int i = 0; i < aliens.size(); i++) {
-			aliens.get(i).draw(g);
+		for(Alien alien : aliens) {
+			alien.draw(g);
 		}
-		for(int i = 0; i < projectiles.size(); i++) {
-			projectiles.get(i).draw(g);
+		for(Projectile proj: projectiles) {
+			proj.draw(g);
 		}
+		for(Star star:stars) {
+			star.draw(g);
+		}
+		
 	}
 	
 	public void purgeObjects() {

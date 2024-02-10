@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 import javax.swing.Timer;
 import javax.swing.JOptionPane;
@@ -148,37 +149,60 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
 			
-			if(rocket.getY() >= rocket.getSpeed()) {
+			/*if(rocket.getY() >= rocket.getSpeed()) {
 				rocket.up();
-			}
+			}*/
+			rocket.setUp(true);
 			
 		}
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			
-			if(rocket.getY() <= LeagueInvaders.HEIGHT-2*rocket.getHeight()) {
-				rocket.down();
-			}
+//			if(rocket.getY() <= LeagueInvaders.HEIGHT-2*rocket.getHeight()) {
+//				rocket.down();
+//			}
+			rocket.setDown(true);
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
 			
-			if(rocket.getX() >= rocket.getSpeed()) {
-				rocket.left();
-			}
+//			if(rocket.getX() >= rocket.getSpeed()) {
+//				rocket.left();
+//			}
+			rocket.setLeft(true);
 			
 		}
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			
-			if(rocket.getX() <= LeagueInvaders.WIDTH-2*rocket.getWidth()) {
-				rocket.right();
-			}
-			
+//			if(rocket.getX() <= LeagueInvaders.WIDTH-2*rocket.getWidth()) {
+//				rocket.right();
+//			}
+			rocket.setRight(true);
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getKeyCode() == KeyEvent.VK_UP) {
+			
+			rocket.setUp(false);
+			
+		}
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			
+			rocket.setDown(false);
+			
+		}
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+	
+			rocket.setLeft(false);
+	
 		
+		}
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+	
+			rocket.setRight(false);
+	
+		}
 	}
 }
