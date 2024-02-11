@@ -56,5 +56,6 @@ public class LeagueInvaders {
  * -Add explosion animation (v1.0.2)
  * -Add waves (v1.1)
  * -Add different aliens (v1.2)
+ * -Aliens can shoot back at random (v1.2.1)
  * 
  */

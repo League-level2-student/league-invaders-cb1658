@@ -29,6 +29,10 @@ public class ObjectManager implements ActionListener{
 	public void addAlien() {
 		aliens.add(new Alien(new Random().nextInt(LeagueInvaders.WIDTH),-50,80,50));
 	}
+	
+	public void addAlien(int x) {
+		aliens.add(new Alien(x,-50,80,50));
+	}
 	public void update() {
 		for(int i = 0; i<aliens.size(); i++) {
 			aliens.get(i).update();
@@ -51,7 +55,7 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void draw(Graphics g) {
-		rocket.draw(g);
+		
 		for(Alien alien : aliens) {
 			alien.draw(g);
 		}
@@ -61,6 +65,7 @@ public class ObjectManager implements ActionListener{
 		for(Star star:stars) {
 			star.draw(g);
 		}
+		rocket.draw(g);
 		
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
@@ -117,8 +122,10 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void alienWave1() {
-		for(int i = 0; i < 25; i++) {
-			addAlien();
+		int rand = new Random().nextInt(500);
+		
+		for(int i = 0; i < 10; i++) {
+			addAlien(rand+20*i);
 		}
 	}
 	
