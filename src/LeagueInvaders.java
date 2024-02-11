@@ -53,6 +53,7 @@ public class LeagueInvaders {
  * 
  * THINGS TO BE DONE: 
  * 
+ * -Make game go faster for increasing score (v1.0.2)
  * -Add explosion animation (v1.0.2)
  * -Add waves (v1.1)
  * -Add different aliens (v1.2)
