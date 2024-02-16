@@ -51,11 +51,14 @@ public class LeagueInvaders {
  * v1.0: Bugs fixed and score added
  * v1.0.1: Alien wave 1 added
  * 
+ * v1.1-snapshot1: Diagonal Aliens have been added (they function properly! yay!)
+ * v1.1-snapshot2: Weirdos added
+ * v1.1: Waves 2 and 3 added
+ * 
  * THINGS TO BE DONE: 
  * 
- * -Make game go faster for increasing score (v1.0.2)
- * -Add explosion animation (v1.0.2)
- * -Add waves (v1.1)
+ * -Make game go faster for increasing score (v1.2)
+ * -Add explosion animation (v1.2)
  * -Add different aliens (v1.2)
  * -Aliens can shoot back at random (v1.2.1)
  * 
