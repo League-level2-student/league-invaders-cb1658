@@ -55,11 +55,15 @@ public class LeagueInvaders {
  * v1.1-snapshot2: Weirdos added
  * v1.1: Waves 2 and 3 added
  * 
+ * v1.1.1: Optimized Shooting/Moved GamePanel alienTimer to ObjectManager
+ * v1.1.2: ThisWaveWillEndYou
+ * 
  * THINGS TO BE DONE: 
  * 
  * -Make game go faster for increasing score (v1.2)
  * -Add explosion animation (v1.2)
- * -Add different aliens (v1.2)
  * -Aliens can shoot back at random (v1.2.1)
+ * -Add different bullets: buckshot, shrapnel
+ * -Add an amunition bar and have the rocket reload when out of amunitions
  * 
  */

@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.Timer;
+
 public class ObjectManager implements ActionListener{
 	Rocketship rocket;
 	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
@@ -15,15 +17,34 @@ public class ObjectManager implements ActionListener{
 	
 	int score = 0;
 	
+	Timer alienSpawn = new Timer(1000, this);
+	
+	Timer shoottimer = new Timer(1000/20, this);
+	
+	boolean isRocketShooting = false;
+	
 	public ObjectManager(Rocketship r) {
 		for(int i = 0; i < 200; i++) {
 			addStar();
 		}
 		this.rocket = r;
+		shoottimer.start();
 	}
 	public void addStar() {
 		stars.add(new Star(new Random().nextInt(1000), new Random().nextInt(1000), 5, 5));
 	}
+	
+	public void startGame() {
+		alienSpawn.start();
+	}
+	
+	public boolean ohShoot() {
+		return this.isRocketShooting;
+	}
+	
+	public void setShoot(boolean b) {
+		isRocketShooting = b;
+	}   
 	
 	public void addProjectile(Projectile p) {
 		projectiles.add(p);
@@ -48,6 +69,7 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void update() {
+		
 		for(int i = 0; i<aliens.size(); i++) {
 			aliens.get(i).update();
 			
@@ -223,27 +245,52 @@ public class ObjectManager implements ActionListener{
 		}
 	}
 	
+	public void thisWaveWillEndYouForSure() {
+		for(int i = 0; i < 15; i++) {
+			alienWave1();
+		}
+		for(int i = 0; i < 10; i++) {
+			alienWave2();
+		}
+		for(int i = 0; i < 5; i++) {
+			alienWave3();
+		}
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		addAlien();
-		
-		int rand = new Random().nextInt(100);
+		if(e.getSource() == alienSpawn) {
+			addAlien();
+			
+			int rand = new Random ().nextInt(100);
 
-		if(rand < 10) {
-			alienWave1();
+			if(rand < 100) {
+				alienWave1();
+			}
+			
+			int rand2 = new Random().nextInt(100);
+			
+			if(rand2 < 3) {
+				alienWave2();
+			}
+			
+			int rand3 = new Random().nextInt(100);
+			
+			if(rand3 < 2) {
+				alienWave3();
+			}
+			
+			if(rand < 2 && rand2 < 50 && rand3 < 80) {
+				thisWaveWillEndYouForSure();
+			}
 		}
 		
-		int rand2 = new Random().nextInt(100);
-		
-		if(rand2 < 3) {
-			alienWave2();
-		}
-		
-		int rand3 = new Random().nextInt(100);
-		
-		if(rand3 < 2) {
-			alienWave3();
+		if(e.getSource() == shoottimer) {
+			if(isRocketShooting) {
+				
+				addProjectile(new Projectile(rocket.getX()+rocket.getWidth()/2,rocket.getY()+rocket.getHeight()/2,10,10));
+			}
 		}
 		
 	}

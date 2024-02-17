@@ -19,7 +19,7 @@ public class DiagonalAlien extends Alien{
 		
 		if(x + speedX > LeagueInvaders.WIDTH ||
 				x + speedX < 0) {
-			speedX = speedX * -1;
+			speedX = -speedX;
 		}
 	}
 	public int getSpeedX() {
