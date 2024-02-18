@@ -66,6 +66,7 @@ public class LeagueInvaders {
  * 
  * -Make game go faster for increasing score (v1.2)
  * -Add explosion animation (v1.2)
+ * -Add more powerups where you gain ammunitions or something like that (v1.2)
  * -Add indestructable alien (v1.3)
  * -Add Menus for different difficulties (v1.3)
  * -Aliens can shoot back at random (v1.3.1)

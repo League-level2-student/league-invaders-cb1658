@@ -194,6 +194,8 @@ public class ObjectManager implements ActionListener{
 		
 		g.drawString("Powerups left: " + getP(), 25,150);
 		
+		g.drawString("1.2-pre2", 10,990);
+		
 	}
 	public void setScore() {
 		score = 0;
