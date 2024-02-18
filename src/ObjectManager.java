@@ -17,7 +17,11 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Powerup> pu = new ArrayList<Powerup>();
 	
+	Timer reloadTimer = new Timer(2000,this);
+	
 	int powerupsLeft = 2;
+	
+	int ammunitionLeft = 200;
 	
 	int score = 0;
 	
@@ -36,6 +40,14 @@ public class ObjectManager implements ActionListener{
 	}
 	public void addStar() {
 		stars.add(new Star(new Random().nextInt(1000), new Random().nextInt(1000), 5, 5));
+	}
+	
+	public int getAmmunition() {
+		return this.ammunitionLeft;
+	}
+	
+	public void setAmmunition(int u) {
+		this.ammunitionLeft = u;
 	}
 	
 	public void startGame() {
@@ -119,6 +131,10 @@ public class ObjectManager implements ActionListener{
 			if(pu.get(i).getY() > LeagueInvaders.HEIGHT) {
 				pu.get(i).setActivity(false);
 			}
+		}
+		
+		if(getAmmunition() == 0) {
+			
 		}
 		
 		rocket.update();
@@ -344,9 +360,10 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		if(e.getSource() == shoottimer) {
-			if(isRocketShooting) {
+			if(isRocketShooting && (getAmmunition()>0)) {
 				
 				addProjectile(new Projectile(rocket.getX()+rocket.getWidth()/2,rocket.getY()+rocket.getHeight()/2,10,10));
+				setAmmunition(getAmmunition()-1);
 			}
 		}
 		
