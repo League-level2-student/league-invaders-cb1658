@@ -60,15 +60,15 @@ public class LeagueInvaders {
  * v1.1.3: Diagonal Aliens can now start moving left or right. Wave rates have been set back to normal. Several other Diagonal Alien improvements
  * 
  * v1.2-pre1: Every game, you are given two powerups which wipe out the entire screen
+ * v1.2-pre2: Added an ammunitions/powerup bar and have the rocket reload when out of ammunitions (this took me two hours *sobs*)
  * 
  * THINGS TO BE DONE: 
  * 
  * -Make game go faster for increasing score (v1.2)
  * -Add explosion animation (v1.2)
  * -Add indestructable alien (v1.3)
- * -Add Menus for different difficulties
+ * -Add Menus for different difficulties (v1.3)
  * -Aliens can shoot back at random (v1.3.1)
  * -Add different bullets: buckshot, shrapnel (v1.4)
- * -Add an amunition bar and have the rocket reload when out of amunitions (v1.5)
  * 
  */

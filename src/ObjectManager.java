@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -18,7 +17,9 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Powerup> pu = new ArrayList<Powerup>();
 	
-	Timer reloadTimer = new Timer(2000,this);
+	Timer reloadTimer = new Timer(3500,this);
+	
+	boolean reloadTimerStarted = false;
 	
 	int powerupsLeft = 2;
 	
@@ -71,6 +72,16 @@ public class ObjectManager implements ActionListener{
 		this.powerupsLeft = i;
 	}
 	
+	public void reload() {
+		reloadTimer.setRepeats(false);
+		reloadTimer.start();
+		
+		reloadTimerStarted=true;
+	}
+	
+	public boolean isReloading() {
+		return reloadTimer.isRunning();
+	}
 	
 	public void addProjectile(Projectile p) {
 		projectiles.add(p);
@@ -134,12 +145,14 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
-		if(getAmmunition() == 0) {
-			
-			//Add Code here
-			
-			setAmmunition(200);
+		if(getAmmunition() == 0 && (!reloadTimerStarted)) {
+			reload();
 		}
+		if(!isReloading() && reloadTimerStarted) {
+			setAmmunition(200);
+			reloadTimerStarted = false;
+		}
+		
 		
 		rocket.update();
 		
@@ -172,7 +185,7 @@ public class ObjectManager implements ActionListener{
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
 		
-		if(getAmmunition() == 0) {
+		if(getAmmunition() <= 0) {
 			g.drawString("Ammunitions left: RELOADING", 25,100);
 		}
 		else {
