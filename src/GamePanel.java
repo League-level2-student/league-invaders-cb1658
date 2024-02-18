@@ -58,6 +58,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		rocket.setActivity(true);
 		om.gone();
 		om.setP(2);
+		om.setAmmunition(200);
 	}
 	
 	public void updateGameState() {

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -135,6 +136,9 @@ public class ObjectManager implements ActionListener{
 		
 		if(getAmmunition() == 0) {
 			
+			//Add Code here
+			
+			setAmmunition(200);
 		}
 		
 		rocket.update();
@@ -167,6 +171,15 @@ public class ObjectManager implements ActionListener{
 		
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
+		
+		if(getAmmunition() == 0) {
+			g.drawString("Ammunitions left: RELOADING", 25,100);
+		}
+		else {
+			g.drawString("Ammunitions left: " + getAmmunition(), 25,100);
+		}
+		
+		g.drawString("Powerups left: " + getP(), 25,150);
 		
 	}
 	public void setScore() {
