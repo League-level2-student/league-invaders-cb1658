@@ -64,6 +64,7 @@ public class LeagueInvaders {
  * -Make game go faster for increasing score (v1.2)
  * -Add explosion animation (v1.2)
  * -Add indestructable alien (v1.3)
+ * -Add Menus for different difficulties
  * -Aliens can shoot back at random (v1.3.1)
  * -Add different bullets: buckshot, shrapnel (v1.4)
  * -Add an amunition bar and have the rocket reload when out of amunitions (v1.5)
