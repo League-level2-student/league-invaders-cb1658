@@ -53,9 +53,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		}
 	}
 	
+	
 	public void updateMenuState() {
 		rocket.setActivity(true);
 		om.gone();
+		om.setP(2);
 	}
 	
 	public void updateGameState() {
@@ -233,6 +235,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			
 			om.setShoot(false);
 			
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_SHIFT && currentState == GAME && om.getP() > 0) {
+			
+			om.addPU(new Powerup(0,LeagueInvaders.HEIGHT,1000,1000));
+			
+			om.setP(om.getP()-1);
 		}
 	}
 }

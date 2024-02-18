@@ -15,6 +15,10 @@ public class ObjectManager implements ActionListener{
 	ArrayList<Star> stars = new ArrayList<Star>();
 	ArrayList<Weirdos> w = new ArrayList<Weirdos>();
 	
+	ArrayList<Powerup> pu = new ArrayList<Powerup>();
+	
+	int powerupsLeft = 2;
+	
 	int score = 0;
 	
 	Timer alienSpawn = new Timer(1000, this);
@@ -45,6 +49,15 @@ public class ObjectManager implements ActionListener{
 	public void setShoot(boolean b) {
 		isRocketShooting = b;
 	}   
+	
+	public int getP() {
+		return this.powerupsLeft;
+	}
+	
+	public void setP(int i) {
+		this.powerupsLeft = i;
+	}
+	
 	
 	public void addProjectile(Projectile p) {
 		projectiles.add(p);
@@ -99,6 +112,15 @@ public class ObjectManager implements ActionListener{
 				w.get(i).setActivity(false);
 			}
 		}
+		
+		for(int i = 0; i < pu.size(); i++) {
+			pu.get(i).update();
+			
+			if(pu.get(i).getY() > LeagueInvaders.HEIGHT) {
+				pu.get(i).setActivity(false);
+			}
+		}
+		
 		rocket.update();
 		
 		checkCollision();
@@ -121,6 +143,9 @@ public class ObjectManager implements ActionListener{
 		}
 		for(Weirdos ww : w) {
 			ww.draw(g);
+		}
+		for(Powerup p : pu) {
+			p.draw(g);
 		}
 		rocket.draw(g);
 		
@@ -178,8 +203,40 @@ public class ObjectManager implements ActionListener{
 				ww.setActivity(false);
 			}
 		}
+		
+		
+		for(Alien diaalien : aliens) {
+			for(Powerup proj : pu) {
+				if(proj.getBox().intersects(diaalien.getBox())) {
+					diaalien.setActivity(false);
+					score++;
+				}
+			}
+		}
+		
+		for(DiagonalAlien diaalien : diaaliens) {
+			for(Powerup proj : pu) {
+				if(proj.getBox().intersects(diaalien.getBox())) {
+					diaalien.setActivity(false);
+					score++;
+				}
+			}
+		}
+		
+		for(Weirdos diaalien : w) {
+			for(Powerup proj : pu) {
+				if(proj.getBox().intersects(diaalien.getBox())) {
+					diaalien.setActivity(false);
+					score++;
+				}
+			}
+		}
 	}
 	
+	
+	public void addPU(Powerup p) {
+		pu.add(p);
+	}
 	public void purgeObjects() {
 		for(int i = aliens.size()-1; i >= 0; i--) {
 			if(aliens.get(i).getActive() == false) {

@@ -57,7 +57,9 @@ public class LeagueInvaders {
  * 
  * v1.1.1: Optimized Shooting/Moved GamePanel alienTimer to ObjectManager
  * v1.1.2: ThisWaveWillEndYou
- * v1.1.3: Diagonal Aliens can now start moving left or right. Wave rates have been set back to normal. Several other Diagonal Alien improvements.
+ * v1.1.3: Diagonal Aliens can now start moving left or right. Wave rates have been set back to normal. Several other Diagonal Alien improvements
+ * 
+ * v1.2-pre1: Every game, you are given two powerups which wipe out the entire screen
  * 
  * THINGS TO BE DONE: 
  * 
