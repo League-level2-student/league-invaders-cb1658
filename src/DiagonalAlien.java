@@ -8,7 +8,18 @@ public class DiagonalAlien extends Alien{
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		
-		speedX = new Random().nextInt(5);
+		boolean whoKnows = new Random().nextInt(1, 101) <= 50;
+		
+		int left_or_right;
+		
+		if(whoKnows) {
+			left_or_right = 1;
+		}
+		else {
+			left_or_right = -1;
+		}
+		
+		speedX = new Random().nextInt(5)*left_or_right;
 	}
 	
 	
@@ -17,7 +28,7 @@ public class DiagonalAlien extends Alien{
 		x += speedX;
 		collisionBox.setBounds(x, y, width, height);
 		
-		if(x + speedX > LeagueInvaders.WIDTH ||
+		if(x + speedX > (LeagueInvaders.WIDTH-80) ||
 				x + speedX < 0) {
 			speedX = -speedX;
 		}

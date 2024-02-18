@@ -9,7 +9,7 @@ public class Weirdos extends Alien{
 	
 	public void update() {
 		x += new Random().nextInt(30)-15;
-		y += new Random().nextInt(3);
+		y += new Random().nextInt(9);
 		collisionBox.setBounds(x, y, width, height);
 		
 		if(x < 0) {

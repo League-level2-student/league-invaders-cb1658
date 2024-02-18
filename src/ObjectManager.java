@@ -19,7 +19,7 @@ public class ObjectManager implements ActionListener{
 	
 	Timer alienSpawn = new Timer(1000, this);
 	
-	Timer shoottimer = new Timer(1000/20, this);
+	Timer shoottimer = new Timer(1000/15, this);
 	
 	boolean isRocketShooting = false;
 	
@@ -265,23 +265,23 @@ public class ObjectManager implements ActionListener{
 			
 			int rand = new Random ().nextInt(100);
 
-			if(rand < 100) {
+			if(rand < 20) {
 				alienWave1();
 			}
 			
 			int rand2 = new Random().nextInt(100);
 			
-			if(rand2 < 3) {
+			if(rand2 < 10) {
 				alienWave2();
 			}
 			
 			int rand3 = new Random().nextInt(100);
 			
-			if(rand3 < 2) {
+			if(rand3 < 5) {
 				alienWave3();
 			}
 			
-			if(rand < 2 && rand2 < 50 && rand3 < 80) {
+			if(rand < 25 && rand2 < 50 && rand3 < 50) {
 				thisWaveWillEndYouForSure();
 			}
 		}

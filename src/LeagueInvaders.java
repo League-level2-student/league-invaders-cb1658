@@ -51,19 +51,21 @@ public class LeagueInvaders {
  * v1.0: Bugs fixed and score added
  * v1.0.1: Alien wave 1 added
  * 
- * v1.1-snapshot1: Diagonal Aliens have been added (they function properly! yay!)
- * v1.1-snapshot2: Weirdos added
+ * v1.1-pre1: Diagonal Aliens have been added (they function properly! yay!)
+ * v1.1-pre2: Weirdos added
  * v1.1: Waves 2 and 3 added
  * 
  * v1.1.1: Optimized Shooting/Moved GamePanel alienTimer to ObjectManager
  * v1.1.2: ThisWaveWillEndYou
+ * v1.1.3: Diagonal Aliens can now start moving left or right. Wave rates have been set back to normal. Several other Diagonal Alien improvements.
  * 
  * THINGS TO BE DONE: 
  * 
  * -Make game go faster for increasing score (v1.2)
  * -Add explosion animation (v1.2)
- * -Aliens can shoot back at random (v1.2.1)
- * -Add different bullets: buckshot, shrapnel
- * -Add an amunition bar and have the rocket reload when out of amunitions
+ * -Add indestructable alien (v1.3)
+ * -Aliens can shoot back at random (v1.3.1)
+ * -Add different bullets: buckshot, shrapnel (v1.4)
+ * -Add an amunition bar and have the rocket reload when out of amunitions (v1.5)
  * 
  */
