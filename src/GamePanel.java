@@ -59,7 +59,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		rocket.setActivity(true);
 		om.gone();
 		om.setP(2);
-		om.setAmmunition(150);
+		om.setAmmunition(100);
 		om.resetReload();
 	}
 	
@@ -107,6 +107,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		g.setFont(of);
 		g.drawString("Press ENTER to redeem yourself!", 250,500);
 		g.drawString("Press SPACE if you want me to System.exit(-1)", 150, 600);
+		g.setFont(tf);
+		g.drawString("Score: "+om.getScore(), 320, 300);
 	}
 
 	@Override
@@ -167,6 +169,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 2) {
+			System.exit(-1);
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_Q) {
 			System.exit(-1);
 		}
 		

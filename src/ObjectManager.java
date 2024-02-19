@@ -149,7 +149,7 @@ public class ObjectManager implements ActionListener{
 			reload();
 		}
 		if(!isReloading() && reloadTimerStarted) {
-			setAmmunition(150);
+			setAmmunition(100);
 			reloadTimerStarted = false;
 		}
 		
@@ -194,7 +194,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.drawString("Powerups left: " + getP(), 25,150);
 		
-		g.drawString("1.2-pre4", 10,990);
+		g.drawString("1.2", 10,990);
 		
 	}
 	
@@ -258,7 +258,6 @@ public class ObjectManager implements ActionListener{
 			for(Powerup proj : pu) {
 				if(proj.getBox().intersects(diaalien.getBox())) {
 					diaalien.setActivity(false);
-					score++;
 				}
 			}
 		}
@@ -267,7 +266,6 @@ public class ObjectManager implements ActionListener{
 			for(Powerup proj : pu) {
 				if(proj.getBox().intersects(diaalien.getBox())) {
 					diaalien.setActivity(false);
-					score++;
 				}
 			}
 		}
@@ -276,7 +274,6 @@ public class ObjectManager implements ActionListener{
 			for(Powerup proj : pu) {
 				if(proj.getBox().intersects(diaalien.getBox())) {
 					diaalien.setActivity(false);
-					score++;
 				}
 			}
 		}

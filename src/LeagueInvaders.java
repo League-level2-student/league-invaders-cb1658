@@ -63,6 +63,7 @@ public class LeagueInvaders {
  * v1.2-pre2: Added an ammunitions/powerup bar and have the rocket reload when out of ammunitions (this took me two hours *sobs*)
  * v1.2-pre3: You can now reload whenever you want by clicking (R). I fixed an issue where it will carry over from the last round
  * v1.2-pre4: You can no longer reload when at 150 ammo. Wave rates set back to normal.
+ * v1.2: Q can be used to quit. Powerups no longer add to the score. Score is shown at end of game. Ammo 150 --> 100.
  * 
  * THINGS TO BE DONE: 
  * 
