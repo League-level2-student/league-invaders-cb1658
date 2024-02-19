@@ -194,7 +194,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.drawString("Powerups left: " + getP(), 25,150);
 		
-		g.drawString("1.2-pre3", 10,990);
+		g.drawString("1.2-pre4", 10,990);
 		
 	}
 	
@@ -387,7 +387,7 @@ public class ObjectManager implements ActionListener{
 				alienWave3();
 			}
 			
-			if(rand < 25 && rand2 < 50 && rand3 < 50) {
+			if(rand < 2 && rand2 < 80 && rand3 < 50) {
 				thisWaveWillEndYouForSure();
 			}
 		}

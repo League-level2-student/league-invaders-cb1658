@@ -62,12 +62,13 @@ public class LeagueInvaders {
  * v1.2-pre1: Every game, you are given two powerups which wipe out the entire screen (Click SHIFT)
  * v1.2-pre2: Added an ammunitions/powerup bar and have the rocket reload when out of ammunitions (this took me two hours *sobs*)
  * v1.2-pre3: You can now reload whenever you want by clicking (R). I fixed an issue where it will carry over from the last round
+ * v1.2-pre4: You can no longer reload when at 150 ammo. Wave rates set back to normal.
  * 
  * THINGS TO BE DONE: 
  * 
- * -Make game go faster for increasing score (v1.2)
- * -Add explosion animation (v1.2)
- * -Add more powerups where you gain ammunitions or something like that (v1.2)
+ * -Make game go faster for increasing score (v1.2.1)
+ * -Add explosion animation (v1.3)
+ * -Add more powerups where you gain ammunitions or something like that (v1.3)
  * -Add indestructable alien (v1.3)
  * -Add Menus for different difficulties (v1.3)
  * -Aliens can shoot back at random (v1.3.1)
