@@ -215,7 +215,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		}
 		
 		
-		if(e.getKeyCode() == KeyEvent.VK_R && currentState == GAME && om.getAmmunition() != 150) {
+		if(e.getKeyCode() == KeyEvent.VK_R && currentState == GAME && om.getAmmunition() != 100) {
 			om.reload();
 		}
 		
