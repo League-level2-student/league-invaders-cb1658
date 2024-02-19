@@ -29,13 +29,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Rocketship rocket = new Rocketship(250,700,80,80);
 	
 	
-	
 	ObjectManager om = new ObjectManager(rocket);
 	
 	public GamePanel() {
 		frameDraw = new Timer(1000/500, this);
 		frameDraw.start();
 	}
+	
+	
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -59,6 +60,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		om.gone();
 		om.setP(2);
 		om.setAmmunition(150);
+		om.resetReload();
 	}
 	
 	public void updateGameState() {
@@ -205,6 +207,18 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			om.setShoot(true);
 			
 		}
+		
+		
+		if(e.getKeyCode() == KeyEvent.VK_R && currentState == GAME) {
+			om.reload();
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_SHIFT && currentState == GAME && om.getP() > 0) {
+			
+			om.addPU(new Powerup(0,LeagueInvaders.HEIGHT,1000,1000));
+			
+			om.setP(om.getP()-1);
+		}
 	}
 
 	@Override
@@ -238,11 +252,5 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_SHIFT && currentState == GAME && om.getP() > 0) {
-			
-			om.addPU(new Powerup(0,LeagueInvaders.HEIGHT,1000,1000));
-			
-			om.setP(om.getP()-1);
-		}
 	}
 }

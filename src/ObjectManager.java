@@ -185,7 +185,7 @@ public class ObjectManager implements ActionListener{
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
 		
-		if(getAmmunition() <= 0) {
+		if(getAmmunition() <= 0 || isReloading()) {
 			g.drawString("Ammunitions left: RELOADING", 25,100);
 		}
 		else {
@@ -194,9 +194,14 @@ public class ObjectManager implements ActionListener{
 		
 		g.drawString("Powerups left: " + getP(), 25,150);
 		
-		g.drawString("1.2-pre2", 10,990);
+		g.drawString("1.2-pre3", 10,990);
 		
 	}
+	
+	public void resetReload() {
+		this.reloadTimer.stop();
+	}
+	
 	public void setScore() {
 		score = 0;
 	}
@@ -388,7 +393,7 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		if(e.getSource() == shoottimer) {
-			if(isRocketShooting && (getAmmunition()>0)) {
+			if(isRocketShooting && (getAmmunition()>0) && !isReloading()) {
 				
 				addProjectile(new Projectile(rocket.getX()+rocket.getWidth()/2,rocket.getY()+rocket.getHeight()/2,10,10));
 				setAmmunition(getAmmunition()-1);

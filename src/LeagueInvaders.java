@@ -59,8 +59,9 @@ public class LeagueInvaders {
  * v1.1.2: ThisWaveWillEndYou
  * v1.1.3: Diagonal Aliens can now start moving left or right. Wave rates have been set back to normal. Several other Diagonal Alien improvements
  * 
- * v1.2-pre1: Every game, you are given two powerups which wipe out the entire screen
+ * v1.2-pre1: Every game, you are given two powerups which wipe out the entire screen (Click SHIFT)
  * v1.2-pre2: Added an ammunitions/powerup bar and have the rocket reload when out of ammunitions (this took me two hours *sobs*)
+ * v1.2-pre3: You can now reload whenever you want by clicking (R). I fixed an issue where it will carry over from the last round
  * 
  * THINGS TO BE DONE: 
  * 
