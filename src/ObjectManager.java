@@ -17,7 +17,7 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Powerup> pu = new ArrayList<Powerup>();
 	
-	Timer reloadTimer = new Timer(3500,this);
+	Timer reloadTimer = new Timer(5000,this);
 	
 	boolean reloadTimerStarted = false;
 	
@@ -149,7 +149,7 @@ public class ObjectManager implements ActionListener{
 			reload();
 		}
 		if(!isReloading() && reloadTimerStarted) {
-			setAmmunition(200);
+			setAmmunition(150);
 			reloadTimerStarted = false;
 		}
 		
