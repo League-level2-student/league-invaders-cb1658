@@ -192,6 +192,10 @@ public class ObjectManager implements ActionListener{
 			g.setColor(Color.ORANGE);
 		}
 		
+		if(getAmmunition() < 11) {
+			g.setColor(new Color(255,100,0));
+		}
+		
 		if(getAmmunition() <= 0 || isReloading()) {
 			g.setColor(Color.RED);
 			g.drawString("Ammunitions left: RELOADING", 25,100);
