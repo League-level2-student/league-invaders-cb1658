@@ -166,6 +166,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 0) {
 			JOptionPane.showMessageDialog(null, "As the creator of BETTER INVADERS I must inform you not to die.");
+			JOptionPane.showMessageDialog(null, "ARROW KEYS are used to move the rocket around.");
+			JOptionPane.showMessageDialog(null, "The space bar is used to shoot.");
+			JOptionPane.showMessageDialog(null, "Press R in order to reload.");
+			JOptionPane.showMessageDialog(null, "Press SHIFT to launch a powerup.");
+			JOptionPane.showMessageDialog(null, "If you hate this game, press Q. Ugh why do I even have to say this.");
+			JOptionPane.showMessageDialog(null, "That's it! Have fun...");
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 2) {

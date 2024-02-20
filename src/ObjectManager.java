@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -182,19 +183,38 @@ public class ObjectManager implements ActionListener{
 		}
 		rocket.draw(g);
 		
+		g.setColor(Color.WHITE);
+		
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
 		
+		if(getAmmunition() < 26) {
+			g.setColor(Color.ORANGE);
+		}
+		
 		if(getAmmunition() <= 0 || isReloading()) {
+			g.setColor(Color.RED);
 			g.drawString("Ammunitions left: RELOADING", 25,100);
 		}
 		else {
 			g.drawString("Ammunitions left: " + getAmmunition(), 25,100);
 		}
 		
+		if(getP()==0) {
+			g.setColor(Color.RED);
+		}
+		else if(getP()==1) {
+			g.setColor(Color.ORANGE);
+		}
+		else {
+			g.setColor(Color.WHITE);
+		}
+		
 		g.drawString("Powerups left: " + getP(), 25,150);
 		
-		g.drawString("1.2", 10,990);
+		g.setColor(Color.WHITE);
+		
+		g.drawString("1.2.1", 10,990);
 		
 	}
 	

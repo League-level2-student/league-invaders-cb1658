@@ -65,6 +65,9 @@ public class LeagueInvaders {
  * v1.2-pre4: You can no longer reload when at full ammo. Wave rates set back to normal.
  * v1.2: Q can be used to quit. Powerups no longer add to the score. Score is shown at end of game. Ammo 150 --> 100.
  * 
+ * v1.2.1: Now, when you are running out or are out of ammo or powerups, they turn orange and red. Revamped the "help" menu button.
+ * 
+ * 
  * THINGS TO BE DONE: 
  * 
  * -Make game go faster for increasing score (v1.2.1)
