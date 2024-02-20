@@ -203,18 +203,17 @@ public class ObjectManager implements ActionListener{
 		else {
 			g.drawString("Ammunitions left: " + getAmmunition(), 25,100);
 		}
-		
-		if(getP()==0) {
-			g.setColor(Color.RED);
-		}
-		else if(getP()==1) {
+
+		if(getP()==1) {
 			g.setColor(Color.ORANGE);
 		}
 		else {
 			g.setColor(Color.WHITE);
 		}
 		
-		g.drawString("Powerups left: " + getP(), 25,150);
+		if(!(getP()==0)) {
+			g.drawString("Powerups left: " + getP(), 25,150);
+		}
 		
 		g.setColor(Color.WHITE);
 		
