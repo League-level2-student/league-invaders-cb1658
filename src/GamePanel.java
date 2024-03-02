@@ -29,14 +29,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Rocketship rocket = new Rocketship(250,700,80,80);
 	
 	
-	ObjectManager om = new ObjectManager(rocket);
+	ObjectManager om = new ObjectManager(rocket,this);
 	
 	public GamePanel() {
-		frameDraw = new Timer(1000/500, this);
+		frameDraw = new Timer(1000/(50+om.getSpeed()*50), this);
 		frameDraw.start();
 	}
 	
-	
+	public Timer getFrameDraw() {
+		return this.frameDraw;
+	}
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -56,11 +58,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	
 	public void updateMenuState() {
+		om.setScore();
 		rocket.setActivity(true);
 		om.gone();
-		om.setP(2);
+		om.setP(200);
 		om.setAmmunition(100);
 		om.resetReload();
+		om.setGameSpeed(1);
 	}
 	
 	public void updateGameState() {
@@ -75,6 +79,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 	}
 	
+	public void setDelay(int delay) {
+		frameDraw.setDelay(delay);
+		frameDraw.restart();
+		//System.out.println("...............Prefix: "+1000/(50+om.getSpeed()*50));
+	}
+	
 	public void drawMenuState(Graphics g) {
 		g.setColor(new Color(0, 255, 145));
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
@@ -84,9 +94,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		g.setFont(of);
 		g.drawString("Press ENTER to start!", 380, 500);
 		g.drawString("Press SPACE if you need help!", 310, 600);
-		
-		om.setScore();
-		
 	}
 
 	public void drawGameState(Graphics g) {

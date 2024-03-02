@@ -47,4 +47,7 @@ public class GameObject {
 	public void setActivity(boolean b) {
 		this.isActive = b;
 	}
+	public void setSpeed(int s) {
+		this.speed = s;
+	}
 }

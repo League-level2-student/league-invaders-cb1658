@@ -71,11 +71,12 @@ public class LeagueInvaders {
  * THINGS TO BE DONE: 
  * 
  * -Make game go faster for increasing score (v1.2.1)
- * -Add explosion animation (v1.3)
  * -Add more powerups where you gain ammunitions or something like that (v1.3)
  * -Add indestructable alien (v1.3)
  * -Add Menus for different difficulties (v1.3)
  * -Aliens can shoot back at random (v1.3.1)
+ * -Add a leaderboard of highscores with initials (v1.4)
  * -Add different bullets: buckshot, shrapnel (v1.4)
+ *  -Add explosion animation (v1.5)
  * 
  */

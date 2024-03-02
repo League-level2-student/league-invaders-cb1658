@@ -8,7 +8,7 @@ public class DiagonalAlien extends Alien{
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		
-		boolean whoKnows = new Random().nextInt(1, 101) <= 50;
+		boolean whoKnows = new Random().nextInt(101) <= 50;
 		
 		int left_or_right;
 		

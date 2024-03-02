@@ -18,6 +18,8 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Powerup> pu = new ArrayList<Powerup>();
 	
+	Random rand = new Random ();
+	
 	Timer reloadTimer = new Timer(5000,this);
 	
 	boolean reloadTimerStarted = false;
@@ -26,18 +28,27 @@ public class ObjectManager implements ActionListener{
 	
 	int ammunitionLeft = 200;
 	
+	int gameSpeed = 1;
+	
+	boolean gameSpeedAlreadyIncreased = false;
+	
 	int score = 0;
 	
 	Timer alienSpawn = new Timer(1000, this);
 	
 	Timer shoottimer = new Timer(1000/15, this);
 	
+	GamePanel gp;
+	
 	boolean isRocketShooting = false;
 	
-	public ObjectManager(Rocketship r) {
+	public ObjectManager(Rocketship r, GamePanel gamePanel) {
 		for(int i = 0; i < 200; i++) {
 			addStar();
 		}
+		
+		this.gp = gamePanel;
+		
 		this.rocket = r;
 		shoottimer.start();
 	}
@@ -82,6 +93,17 @@ public class ObjectManager implements ActionListener{
 	
 	public boolean isReloading() {
 		return reloadTimer.isRunning();
+	}
+	
+	
+	public void setGameSpeed(int x) {
+		gameSpeed = x;
+		
+		gp.setDelay(1000/(50+getSpeed()*50));
+	}
+	
+	public int getSpeed() {
+		return this.gameSpeed;
 	}
 	
 	public void addProjectile(Projectile p) {
@@ -153,6 +175,17 @@ public class ObjectManager implements ActionListener{
 			setAmmunition(100);
 			reloadTimerStarted = false;
 		}
+		
+		
+		if((score % 100 > 0 && score % 100 < 10) && !gameSpeedAlreadyIncreased) {
+			setGameSpeed(getSpeed()+1);
+			gameSpeedAlreadyIncreased = true;
+		}
+		
+		if(score % 100 > 50 && score % 100 < 60) {
+			gameSpeedAlreadyIncreased = false;
+		}
+		
 		
 		
 		rocket.update();
@@ -352,10 +385,10 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void alienWave1() {
-		int rand = new Random().nextInt(500);
+		int rand_ = rand.nextInt(500);
 		
 		for(int i = 0; i < 10; i++) {
-			addAlien(rand+20*i);
+			addAlien(rand_+20*i);
 		}
 	}
 	
@@ -389,25 +422,25 @@ public class ObjectManager implements ActionListener{
 		if(e.getSource() == alienSpawn) {
 			addAlien();
 			
-			int rand = new Random ().nextInt(100);
+			int rand_ = rand.nextInt(100);
 
-			if(rand < 20) {
+			if(rand_ < 25) {
 				alienWave1();
 			}
 			
-			int rand2 = new Random().nextInt(100);
+			int rand2 = rand.nextInt(100);
 			
-			if(rand2 < 10) {
+			if(rand2 < 15) {
 				alienWave2();
 			}
 			
-			int rand3 = new Random().nextInt(100);
+			int rand3 = rand.nextInt(100);
 			
-			if(rand3 < 5) {
+			if(rand3 < 10) {
 				alienWave3();
 			}
 			
-			if(rand < 2 && rand2 < 80 && rand3 < 50) {
+			if(rand_ < 5 && rand2 < 80 && rand3 < 50) {
 				thisWaveWillEndYouForSure();
 			}
 		}
