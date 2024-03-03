@@ -80,8 +80,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void setDelay(int delay) {
+		int initialDelay = frameDraw.getInitialDelay();
+		
+		frameDraw.setInitialDelay(delay);
 		frameDraw.setDelay(delay);
 		frameDraw.restart();
+		
+		if(initialDelay != delay) {
+			frameDraw.start();
+		}
+		
+		System.out.println(frameDraw.getInitialDelay());
 		//System.out.println("...............Prefix: "+1000/(50+om.getSpeed()*50));
 	}
 	

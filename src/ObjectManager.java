@@ -99,7 +99,7 @@ public class ObjectManager implements ActionListener{
 	public void setGameSpeed(int x) {
 		gameSpeed = x;
 		
-		gp.setDelay(1000/(50+getSpeed()*50));
+		gp.setDelay(1000/(50+getSpeed()*100));
 	}
 	
 	public int getSpeed() {
@@ -177,16 +177,14 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		
-		if((score % 100 > 0 && score % 100 < 10) && !gameSpeedAlreadyIncreased) {
+		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
 			setGameSpeed(getSpeed()+1);
 			gameSpeedAlreadyIncreased = true;
 		}
 		
-		if(score % 100 > 50 && score % 100 < 60) {
+		if(score % 100 > 60 && score % 100 < 90) {
 			gameSpeedAlreadyIncreased = false;
 		}
-		
-		
 		
 		rocket.update();
 		
@@ -250,7 +248,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.2.1", 10,990);
+		g.drawString("1.3-pre1", 10,990);
 		
 	}
 	

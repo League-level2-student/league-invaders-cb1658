@@ -67,10 +67,12 @@ public class LeagueInvaders {
  * 
  * v1.2.1: Now, when you are running out or are out of ammo or powerups, they turn orange and red. Revamped the "help" menu button.
  * 
+ * v1.3-pre1: CHANGES -- The game now speeds up with increasing score. 
+ *            KNOWN ISSUES -- Only works on mac computers -- not replicatable -- other issues -- Timer.setDelay() does not work as intended. 
+ *            CHANGE BACK LATER -- Debug mode: 200 powerups and prints in the console to be removed.
  * 
  * THINGS TO BE DONE: 
  * 
- * -Make game go faster for increasing score (v1.2.1)
  * -Add more powerups where you gain ammunitions or something like that (v1.3)
  * -Add indestructable alien (v1.3)
  * -Add Menus for different difficulties (v1.3)
