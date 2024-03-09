@@ -28,7 +28,7 @@ public class ObjectManager implements ActionListener{
 	
 	int ammunitionLeft = 200;
 	
-	int gameSpeed = 1;
+	int gameSpeed = 10;
 	
 	boolean gameSpeedAlreadyIncreased = false;
 	
@@ -99,7 +99,7 @@ public class ObjectManager implements ActionListener{
 	public void setGameSpeed(int x) {
 		gameSpeed = x;
 		
-		gp.setDelay(1000/(50+getSpeed()*100));
+		gp.setDelay(x);
 	}
 	
 	public int getSpeed() {
@@ -178,7 +178,7 @@ public class ObjectManager implements ActionListener{
 		
 		
 		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
-			setGameSpeed(getSpeed()+1);
+			setGameSpeed(getSpeed()-9);
 			gameSpeedAlreadyIncreased = true;
 		}
 		
@@ -416,6 +416,8 @@ public class ObjectManager implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		System.out.println(gp.getTimer().getDelay() + " tick");
 		
 		if(e.getSource() == alienSpawn) {
 			addAlien();

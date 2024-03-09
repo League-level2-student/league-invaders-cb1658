@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	ObjectManager om = new ObjectManager(rocket,this);
 	
 	public GamePanel() {
-		frameDraw = new Timer(1000/(50+om.getSpeed()*50), this);
+		frameDraw = new Timer(om.getSpeed(), this);
 		frameDraw.start();
 	}
 	
@@ -64,7 +64,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		om.setP(200);
 		om.setAmmunition(100);
 		om.resetReload();
-		om.setGameSpeed(1);
+
 	}
 	
 	public void updateGameState() {
@@ -82,7 +82,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	public void setDelay(int delay) {
 		int initialDelay = frameDraw.getInitialDelay();
 		
-		frameDraw.setInitialDelay(delay);
+		frameDraw = new Timer(delay, this);
+		
+		/*frameDraw.setInitialDelay(delay);
 		frameDraw.setDelay(delay);
 		frameDraw.restart();
 		
@@ -90,7 +92,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			frameDraw.start();
 		}
 		
-		System.out.println(frameDraw.getInitialDelay());
+		System.out.println(frameDraw.getInitialDelay());*/
+		
+		
 		//System.out.println("...............Prefix: "+1000/(50+om.getSpeed()*50));
 	}
 	
@@ -280,5 +284,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			
 		}
 		
+	}
+	
+	public Timer getTimer() {
+		return this.frameDraw;
 	}
 }
