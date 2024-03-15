@@ -69,7 +69,7 @@ public class LeagueInvaders {
  * 
  * v1.3-pre1: The game now speeds up with increasing score. Doesnt work.
  * v1.3-pre2: Fixed! Only after three weeks...
- * v1.3-pre3: Hotfix: speed now resets every round.
+ * 			-- FIX RESTART SPEED FEATURE
  *            
  * 
  * THINGS TO BE DONE: 

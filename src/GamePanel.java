@@ -98,11 +98,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 	}
 	
-	public void frameDrawRestart() {
-		frameDraw = new Timer(100,this);
-		frameDraw.restart();
-	}
-	
 	public void drawMenuState(Graphics g) {
 		g.setColor(new Color(0, 255, 145));
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
