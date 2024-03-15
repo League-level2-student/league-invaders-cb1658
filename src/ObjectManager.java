@@ -65,6 +65,9 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void startGame() {
+		
+		gameSpeed = 25;
+		
 		alienSpawn.start();
 	}
 	
@@ -178,7 +181,7 @@ public class ObjectManager implements ActionListener{
 		
 		
 		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
-			setGameSpeed(getSpeed()-3);
+			setGameSpeed(getSpeed()-2);
 			gameSpeedAlreadyIncreased = true;
 		}
 		
@@ -248,7 +251,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3-pre2", 10,990);
+		g.drawString("1.3-pre3", 10,990);
 		
 	}
 	
@@ -370,7 +373,7 @@ public class ObjectManager implements ActionListener{
 		for(int i = projectiles.size()-1; i >= 0; i--) {
 			
 				projectiles.remove(i);
-			
+			       
 		}
 		
 		for(int i = diaaliens.size()-1; i >= 0; i--) {

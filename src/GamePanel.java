@@ -17,7 +17,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	final int GAME = 1;
 	final int END = 2;
 	
-	
+	boolean speedCalibrated = false;
 	
 	int currentState = 0;
 	
@@ -63,8 +63,19 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		om.gone();
 		om.setP(2);
 		om.setAmmunition(100);
+		
 		om.resetReload();
-
+		
+		System.out.println("xxxxstuff");
+		
+		if(!speedCalibrated) {
+			frameDraw.setDelay(25);
+			frameDraw.restart();
+			
+			speedCalibrated = true;
+			
+			System.out.println("stuff");
+		}
 	}
 	
 	public void updateGameState() {
@@ -76,7 +87,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void updateEndState() {
-		
+		speedCalibrated = false; 
 	}
 	
 	public void setDelay(int delay) {
@@ -85,6 +96,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		frameDraw.restart();
 
+	}
+	
+	public void frameDrawRestart() {
+		frameDraw = new Timer(100,this);
+		frameDraw.restart();
 	}
 	
 	public void drawMenuState(Graphics g) {
@@ -163,8 +179,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			switch(currentState) {
 			case MENU:
-				currentState++;
 				om.startGame();
+				
+				currentState++;
+				
 				om.setShoot(false);
 				break;
 			case END:
