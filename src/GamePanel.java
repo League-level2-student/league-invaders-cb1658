@@ -61,7 +61,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		om.setScore();
 		rocket.setActivity(true);
 		om.gone();
-		om.setP(200);
+		om.setP(2);
 		om.setAmmunition(100);
 		om.resetReload();
 
@@ -80,22 +80,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void setDelay(int delay) {
-		int initialDelay = frameDraw.getInitialDelay();
 		
 		frameDraw = new Timer(delay, this);
 		
-		/*frameDraw.setInitialDelay(delay);
-		frameDraw.setDelay(delay);
 		frameDraw.restart();
-		
-		if(initialDelay != delay) {
-			frameDraw.start();
-		}
-		
-		System.out.println(frameDraw.getInitialDelay());*/
-		
-		
-		//System.out.println("...............Prefix: "+1000/(50+om.getSpeed()*50));
+
 	}
 	
 	public void drawMenuState(Graphics g) {

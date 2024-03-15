@@ -28,7 +28,7 @@ public class ObjectManager implements ActionListener{
 	
 	int ammunitionLeft = 200;
 	
-	int gameSpeed = 10;
+	int gameSpeed = 25;
 	
 	boolean gameSpeedAlreadyIncreased = false;
 	
@@ -178,7 +178,7 @@ public class ObjectManager implements ActionListener{
 		
 		
 		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
-			setGameSpeed(getSpeed()-9);
+			setGameSpeed(getSpeed()-3);
 			gameSpeedAlreadyIncreased = true;
 		}
 		
@@ -248,7 +248,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3-pre1", 10,990);
+		g.drawString("1.3-pre2", 10,990);
 		
 	}
 	
@@ -380,6 +380,10 @@ public class ObjectManager implements ActionListener{
 		for(int i = w.size()-1; i >= 0; i--) {
 			w.remove(i);
 		}
+		
+		for(int i = pu.size()-1; i >= 0; i--) {
+			pu.remove(i);
+		}
 	}
 	
 	public void alienWave1() {
@@ -416,8 +420,6 @@ public class ObjectManager implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		System.out.println(gp.getTimer().getDelay() + " tick");
 		
 		if(e.getSource() == alienSpawn) {
 			addAlien();

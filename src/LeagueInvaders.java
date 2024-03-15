@@ -1,4 +1,4 @@
-import java.awt.Dimension;
+  import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -67,9 +67,9 @@ public class LeagueInvaders {
  * 
  * v1.2.1: Now, when you are running out or are out of ammo or powerups, they turn orange and red. Revamped the "help" menu button.
  * 
- * v1.3-pre1: CHANGES -- The game now speeds up with increasing score. 
- *            KNOWN ISSUES -- Only works on mac computers -- not replicatable -- other issues -- Timer.setDelay() does not work as intended. 
- *            CHANGE BACK LATER -- Debug mode: 200 powerups and prints in the console to be removed.
+ * v1.3-pre1: The game now speeds up with increasing score. Doesnt work.
+ * v1.3-pre2: Fixed! Only after three weeks...
+ *            
  * 
  * THINGS TO BE DONE: 
  * 
