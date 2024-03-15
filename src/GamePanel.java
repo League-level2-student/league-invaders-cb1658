@@ -66,15 +66,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		om.resetReload();
 		
-		System.out.println("xxxxstuff");
+		
 		
 		if(!speedCalibrated) {
+			
 			frameDraw.setDelay(25);
 			frameDraw.restart();
 			
 			speedCalibrated = true;
 			
-			System.out.println("stuff");
+			
 		}
 	}
 	

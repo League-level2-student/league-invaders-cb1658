@@ -251,7 +251,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3-pre3", 10,990);
+		g.drawString("1.3-pre2", 10,990);
 		
 	}
 	
