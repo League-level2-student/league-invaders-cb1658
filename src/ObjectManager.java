@@ -241,6 +241,10 @@ public class ObjectManager implements ActionListener{
 		g.setFont(new Font("Impact", Font.PLAIN, 40));
 		g.drawString("Score: "+getScore(),25 ,50);
 		
+		if(getAmmunition() == 100) {
+			g.setColor(new Color(150, 255,150));
+		}
+		
 		if(getAmmunition() < 26) {
 			g.setColor(Color.ORANGE);
 		}
@@ -270,7 +274,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3-pre2", 10,990);
+		g.drawString("1.3", 10,990);
 		
 	}
 	
@@ -357,10 +361,12 @@ public class ObjectManager implements ActionListener{
 		for(Ammo a : am) {
 			if(rocket.getBox().intersects(a.getBox())) {
 
-				if(ammunitionLeft + 50) {
-					
+				if(ammunitionLeft + 30 > 100) {
+					ammunitionLeft = 100;
 				}
-				
+				else {
+					ammunitionLeft += 30;
+				}
 				
 				a.setActivity(false);
 			}

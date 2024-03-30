@@ -70,6 +70,8 @@ public class LeagueInvaders {
  * v1.3-pre1: The game now speeds up with increasing score. Doesnt work.
  * v1.3-pre2: Fixed! Only after three weeks...
  * 			  Known Issues: Speed does not reset after each game properly.
+ * v1.3: Ammo Powerups are now spawning which increase ammo by 30. Ammo still cannot go over 100 however.
+ * 		 When ammo is at full, it is given a green tint. Ammo powerups do not work while reloading.
  *            
  * 
  * THINGS TO BE DONE: 
