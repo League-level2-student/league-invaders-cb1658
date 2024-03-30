@@ -18,6 +18,8 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Powerup> pu = new ArrayList<Powerup>();
 	
+	ArrayList<Ammo> am = new ArrayList<Ammo>();
+	
 	Random rand = new Random ();
 	
 	Timer reloadTimer = new Timer(5000,this);
@@ -171,6 +173,14 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
+		for(int i = 0; i < am.size(); i++) {
+			am.get(i).update();
+			
+			if(am.get(i).getY() > LeagueInvaders.HEIGHT) {
+				am.get(i).setActivity(false);
+			}
+		}
+		
 		if(getAmmunition() == 0 && (!reloadTimerStarted)) {
 			reload();
 		}
@@ -195,6 +205,10 @@ public class ObjectManager implements ActionListener{
 		purgeObjects();
 	}
 	
+	public void addAmmo() {
+		am.add(new Ammo(new Random().nextInt(LeagueInvaders.WIDTH),-50,25,25));
+	}
+	
 	public void draw(Graphics g) {
 		
 		for(Alien alien : aliens) {
@@ -215,6 +229,11 @@ public class ObjectManager implements ActionListener{
 		for(Powerup p : pu) {
 			p.draw(g);
 		}
+		
+		for(Ammo a : am) {
+			a.draw(g);
+		}
+		
 		rocket.draw(g);
 		
 		g.setColor(Color.WHITE);
@@ -334,6 +353,18 @@ public class ObjectManager implements ActionListener{
 				}
 			}
 		}
+		
+		for(Ammo a : am) {
+			if(rocket.getBox().intersects(a.getBox())) {
+
+				if(ammunitionLeft + 50) {
+					
+				}
+				
+				
+				a.setActivity(false);
+			}
+		}
 	}
 	
 	
@@ -362,6 +393,12 @@ public class ObjectManager implements ActionListener{
 				w.remove(i);
 			}
 		}
+		
+		for(int i = am.size()-1; i >= 0 ; i--) {
+			if(am.get(i).getActive() == false) {
+				am.remove(i);
+			}
+		}
 	}
 	
 	public void gone() {
@@ -386,6 +423,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(int i = pu.size()-1; i >= 0; i--) {
 			pu.remove(i);
+		}
+		
+		for(int i = am.size()-1; i >= 0; i--) {
+			am.remove(i);
 		}
 	}
 	
@@ -447,6 +488,10 @@ public class ObjectManager implements ActionListener{
 			
 			if(rand_ < 5 && rand2 < 80 && rand3 < 50) {
 				thisWaveWillEndYouForSure();
+			}
+			
+			if(rand_ < 25 && rand2 < 50 && rand3 < 75) {
+				addAmmo();
 			}
 		}
 		
