@@ -20,6 +20,8 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<Ammo> am = new ArrayList<Ammo>();
 	
+	ArrayList<BadAmmo> bam = new ArrayList<BadAmmo>();
+	
 	Random rand = new Random ();
 	
 	Timer reloadTimer = new Timer(5000,this);
@@ -181,6 +183,14 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
+		for(int i = 0; i < bam.size(); i++) {
+			bam.get(i).update();
+			
+			if(bam.get(i).getY() > LeagueInvaders.HEIGHT) {
+				bam.get(i).setActivity(false);
+			}
+		}
+		
 		if(getAmmunition() == 0 && (!reloadTimerStarted)) {
 			reload();
 		}
@@ -206,7 +216,11 @@ public class ObjectManager implements ActionListener{
 	}
 	
 	public void addAmmo() {
-		am.add(new Ammo(new Random().nextInt(LeagueInvaders.WIDTH),-50,25,25));
+		am.add(new Ammo(new Random().nextInt(LeagueInvaders.WIDTH),-50,26,26));
+	}
+	
+	public void addBammo() {
+		bam.add(new BadAmmo(new Random().nextInt(LeagueInvaders.WIDTH),-50,26,26));
 	}
 	
 	public void draw(Graphics g) {
@@ -232,6 +246,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(Ammo a : am) {
 			a.draw(g);
+		}
+		
+		for(Ammo b : bam) {
+			b.draw(g);
 		}
 		
 		rocket.draw(g);
@@ -274,7 +292,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3", 10,990);
+		g.drawString("1.3.1", 10,990);
 		
 	}
 	
@@ -371,6 +389,15 @@ public class ObjectManager implements ActionListener{
 				a.setActivity(false);
 			}
 		}
+		
+		for(BadAmmo ba : bam) {
+			if(rocket.getBox().intersects(ba.getBox())) {
+
+				ammunitionLeft -= 30;
+				
+				ba.setActivity(false);
+			}
+		}
 	}
 	
 	
@@ -405,6 +432,12 @@ public class ObjectManager implements ActionListener{
 				am.remove(i);
 			}
 		}
+		
+		for(int i = bam.size()-1; i >= 0 ; i--) {
+			if(bam.get(i).getActive() == false) {
+				bam.remove(i);
+			}
+		}
 	}
 	
 	public void gone() {
@@ -433,6 +466,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(int i = am.size()-1; i >= 0; i--) {
 			am.remove(i);
+		}
+		
+		for(int i = bam.size()-1; i >= 0; i--) {
+			bam.remove(i);
 		}
 	}
 	
@@ -498,6 +535,10 @@ public class ObjectManager implements ActionListener{
 			
 			if(rand_ < 25 && rand2 < 50 && rand3 < 75) {
 				addAmmo();
+			}
+			
+			if(rand3 < 20) {
+				addBammo();
 			}
 		}
 		

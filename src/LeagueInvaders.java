@@ -72,11 +72,13 @@ public class LeagueInvaders {
  * 			  Known Issues: Speed does not reset after each game properly.
  * v1.3: Ammo Powerups are now spawning which increase ammo by 30. Ammo still cannot go over 100 however.
  * 		 When ammo is at full, it is given a green tint. Ammo powerups do not work while reloading.
+ * v1.3.1: Good Ammo now has a plus sign. Bad ammo added. Removes 30 ammo and has minus sign. 
+ * 		   Known issues: By using bad ammo, reload can happen forever. Unknown reason.
  *            
  * 
  * THINGS TO BE DONE: 
  * 
- * -Add more powerups where you gain ammunitions or something like that (v1.3)
+ * -Add Big/Small bad ammo (v1.3)
  * -Add indestructable alien (v1.3)
  * -Add Menus for different difficulties (v1.3)
  * -Aliens can shoot back at random (v1.3.1)
