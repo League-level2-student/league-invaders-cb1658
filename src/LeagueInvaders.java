@@ -74,6 +74,7 @@ public class LeagueInvaders {
  * 		 When ammo is at full, it is given a green tint. Ammo powerups do not work while reloading.
  * v1.3.1: Good Ammo now has a plus sign. Bad ammo added. Removes 30 ammo and has minus sign. 
  * v1.3.2: Fixed issue where negative ammo caused by bad ammo can make reload happen forever.
+ * 		   You can no longer pick up ammo powerups/debuffs when reloading
  *            
  * 
  * THINGS TO BE DONE: 

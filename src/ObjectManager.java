@@ -377,7 +377,7 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		for(Ammo a : am) {
-			if(rocket.getBox().intersects(a.getBox())) {
+			if(rocket.getBox().intersects(a.getBox()) && !isReloading() && ammunitionLeft != 100) {
 
 				if(ammunitionLeft + 30 > 100) {
 					ammunitionLeft = 100;
@@ -391,7 +391,7 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		for(BadAmmo ba : bam) {
-			if(rocket.getBox().intersects(ba.getBox())) {
+			if(rocket.getBox().intersects(ba.getBox()) && !isReloading()) {
 
 				ammunitionLeft -= 30;
 				
