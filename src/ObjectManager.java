@@ -191,7 +191,7 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
-		if(getAmmunition() == 0 && (!reloadTimerStarted)) {
+		if(getAmmunition() <= 0 && (!reloadTimerStarted)) {
 			reload();
 		}
 		if(!isReloading() && reloadTimerStarted) {
@@ -292,7 +292,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3.1", 10,990);
+		g.drawString("1.3.2", 10,990);
 		
 	}
 	

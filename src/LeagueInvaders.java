@@ -73,7 +73,7 @@ public class LeagueInvaders {
  * v1.3: Ammo Powerups are now spawning which increase ammo by 30. Ammo still cannot go over 100 however.
  * 		 When ammo is at full, it is given a green tint. Ammo powerups do not work while reloading.
  * v1.3.1: Good Ammo now has a plus sign. Bad ammo added. Removes 30 ammo and has minus sign. 
- * 		   Known issues: By using bad ammo, reload can happen forever. Unknown reason.
+ * v1.3.2: Fixed issue where negative ammo caused by bad ammo can make reload happen forever.
  *            
  * 
  * THINGS TO BE DONE: 
