@@ -201,7 +201,7 @@ public class ObjectManager implements ActionListener{
 		
 		
 		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
-			setGameSpeed(getSpeed()-2);
+			setGameSpeed(getSpeed()-1);
 			gameSpeedAlreadyIncreased = true;
 		}
 		
