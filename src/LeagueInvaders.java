@@ -77,6 +77,7 @@ public class LeagueInvaders {
  * 		   You can no longer pick up ammo powerups/debuffs when reloading
  * 
  * v1.4-pre1: Aliens will now shoot homing projectiles at random.
+ * v1.4-pre2: Collision box now fits the rocket better. 
  * 
  * THINGS TO BE DONE: 
  * 

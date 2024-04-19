@@ -572,14 +572,14 @@ public class ObjectManager implements ActionListener{
 				addAmmo();
 			}
 			
-			if(rand3 < 20) {
+			  if(rand3 < 20) {
 				addBammo();
 			}
 		}
 		
 		for(Alien a : aliens) {
 			
-			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 25) {
+			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 18) {
 				addAP(a.getX(),a.getY());
 			}
 			
