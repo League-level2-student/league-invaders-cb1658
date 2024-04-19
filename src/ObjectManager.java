@@ -22,6 +22,8 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<BadAmmo> bam = new ArrayList<BadAmmo>();
 	
+	ArrayList<AlienProj> ap = new ArrayList<AlienProj>();
+	
 	Random rand = new Random ();
 	
 	Timer reloadTimer = new Timer(5000,this);
@@ -123,6 +125,10 @@ public class ObjectManager implements ActionListener{
 		w.add(new Weirdos(new Random().nextInt(LeagueInvaders.WIDTH),-50,80,50));
 	}
 	
+	public void addAP(int x, int y) {
+		ap.add(new AlienProj(x,y,32,20,rocket));
+	}
+	
 	public void addAlien(int x) {
 		aliens.add(new Alien(x,-50,80,50));
 	}
@@ -191,6 +197,14 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
+		for(int i = 0; i < ap.size(); i++) {
+			ap.get(i).update();
+			
+			if(ap.get(i).getY() > LeagueInvaders.HEIGHT) {
+				ap.get(i).setActivity(false);
+			}
+		}
+		
 		if(getAmmunition() <= 0 && (!reloadTimerStarted)) {
 			reload();
 		}
@@ -252,6 +266,10 @@ public class ObjectManager implements ActionListener{
 			b.draw(g);
 		}
 		
+		for(AlienProj proj : ap) {
+			proj.draw(g);
+		}
+		
 		rocket.draw(g);
 		
 		g.setColor(Color.WHITE);
@@ -292,7 +310,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.3.2", 10,990);
+		g.drawString("1.4-pre1", 10,990);
 		
 	}
 	
@@ -398,6 +416,13 @@ public class ObjectManager implements ActionListener{
 				ba.setActivity(false);
 			}
 		}
+		
+		for(AlienProj proj : ap) {
+			if(rocket.getBox().intersects(proj.getBox())) {
+				rocket.setActivity(false);
+				proj.setActivity(false);
+			}
+		}
 	}
 	
 	
@@ -438,6 +463,12 @@ public class ObjectManager implements ActionListener{
 				bam.remove(i);
 			}
 		}
+		
+		for(int i = ap.size()-1; i >= 0; i--) {
+			if(ap.get(i).getActive() == false) {
+				ap.remove(i);
+			}
+		}
 	}
 	
 	public void gone() {
@@ -470,6 +501,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(int i = bam.size()-1; i >= 0; i--) {
 			bam.remove(i);
+		}
+		
+		for(int i = ap.size()-1; i >= 0; i--) {
+			ap.remove(i);
 		}
 	}
 	
@@ -541,6 +576,15 @@ public class ObjectManager implements ActionListener{
 				addBammo();
 			}
 		}
+		
+		for(Alien a : aliens) {
+			
+			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 25) {
+				addAP(a.getX(),a.getY());
+			}
+			
+		}
+		
 		
 		if(e.getSource() == shoottimer) {
 			if(isRocketShooting && (getAmmunition()>0) && !isReloading()) {

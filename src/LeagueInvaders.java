@@ -75,14 +75,13 @@ public class LeagueInvaders {
  * v1.3.1: Good Ammo now has a plus sign. Bad ammo added. Removes 30 ammo and has minus sign. 
  * v1.3.2: Fixed issue where negative ammo caused by bad ammo can make reload happen forever.
  * 		   You can no longer pick up ammo powerups/debuffs when reloading
- *            
+ * 
+ * v1.4-pre1: Aliens will now shoot homing projectiles at random.
  * 
  * THINGS TO BE DONE: 
  * 
- * -Add Big/Small bad ammo (v1.3)
- * -Add indestructable alien (v1.3)
- * -Add Menus for different difficulties (v1.3)
- * -Aliens can shoot back at random (v1.3.1)
+ * -Add indestructable alien (v1.4)
+ * -Add Menus for different difficulties (v1.4)
  * -Add a leaderboard of highscores with initials (v1.4)
  * -Add different bullets: buckshot, shrapnel (v1.4)
  *  -Add explosion animation (v1.5)
