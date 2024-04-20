@@ -1,4 +1,4 @@
-  import java.awt.Dimension;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -78,7 +78,9 @@ public class LeagueInvaders {
  * 
  * v1.4-pre1: Aliens will now shoot homing projectiles at random.
  * v1.4-pre2: Collision box now fits the rocket better. 
- * v1.4-pre3: Powerups now destroy alien projectiles. Speed change disabled for the time being. DEBUG: Hitboxes can be shown by uncommenting lines.
+ * v1.4-pre3: Powerups now destroy alien projectiles. Speed change disabled for the time being. 
+ * 			  DEBUG: Hitboxes can be shown by uncommenting lines.
+ * v1.4-pre4: Ammunitions amount is in the form of a bar. 
  * 
  * THINGS TO BE DONE: 
  * 

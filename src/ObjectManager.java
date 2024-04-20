@@ -294,7 +294,9 @@ public class ObjectManager implements ActionListener{
 			g.drawString("Ammunitions left: RELOADING", 25,100);
 		}
 		else {
-			g.drawString("Ammunitions left: " + getAmmunition(), 25,100);
+			g.drawString("Ammunitions left: ", 25,100);
+			g.drawRect(330,60,100,50);
+			g.fillRect(330,60,getAmmunition(),50);
 		}
 
 		if(getP()==1) {
@@ -310,7 +312,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4-pre3", 10,990);
+		g.drawString("1.4-pre4", 10,990);
 		
 	}
 	
