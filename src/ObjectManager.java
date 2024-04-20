@@ -312,7 +312,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4-pre4", 10,990);
+		g.drawString("1.4", 10,990);
 		
 	}
 	
@@ -427,6 +427,13 @@ public class ObjectManager implements ActionListener{
 			
 			for(Powerup p : pu) {
 				if(proj.getBox().intersects(p.getBox())) {
+					proj.setActivity(false);
+				}
+			}
+			
+			for(Projectile ppp : projectiles) {
+				if(ppp.getBox().intersects(proj.getBox())) {
+					ppp.setActivity(false);
 					proj.setActivity(false);
 				}
 			}
@@ -587,7 +594,7 @@ public class ObjectManager implements ActionListener{
 		
 		for(Alien a : aliens) {
 			
-			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 18) {
+			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 25) {
 				addAP(a.getX(),a.getY());
 			}
 			

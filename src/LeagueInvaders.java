@@ -81,6 +81,8 @@ public class LeagueInvaders {
  * v1.4-pre3: Powerups now destroy alien projectiles. Speed change disabled for the time being. 
  * 			  DEBUG: Hitboxes can be shown by uncommenting lines.
  * v1.4-pre4: Ammunitions amount is in the form of a bar. 
+ * v1.4: You can now destroy alien projectiles using rocket projectiles (ugh). Powerups now fill ammo bar and stop reloading. Bammo is much faster now.
+ * 		 
  * 
  * THINGS TO BE DONE: 
  * 

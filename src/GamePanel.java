@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	ObjectManager om = new ObjectManager(rocket,this);
 	
 	public GamePanel() {
-		frameDraw = new Timer(23, this); // CHANGED FROM om.getSpeed() --> 23
+		frameDraw = new Timer(20, this); // CHANGED FROM om.getSpeed() --> 23
 		frameDraw.start();
 	}
 	
@@ -253,6 +253,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			om.addPU(new Powerup(0,LeagueInvaders.HEIGHT,1000,1000));
 			
 			om.setP(om.getP()-1);
+			
+			om.setAmmunition(100);
+			
+			om.resetReload();
 		}
 	}
 
