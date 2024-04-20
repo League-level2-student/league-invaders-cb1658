@@ -214,10 +214,10 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		
-		if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
+		/*if((score % 100 > 0 && score % 100 < 50) && !gameSpeedAlreadyIncreased && !(score < 100)) {
 			setGameSpeed(getSpeed()-1);
 			gameSpeedAlreadyIncreased = true;
-		}
+		}*/ //SPEED CHANGER
 		
 		if(score % 100 > 60 && score % 100 < 90) {
 			gameSpeedAlreadyIncreased = false;
@@ -310,7 +310,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4-pre2", 10,990);
+		g.drawString("1.4-pre3", 10,990);
 		
 	}
 	
@@ -421,6 +421,12 @@ public class ObjectManager implements ActionListener{
 			if(rocket.getBox().intersects(proj.getBox())) {
 				rocket.setActivity(false);
 				proj.setActivity(false);
+			}
+			
+			for(Powerup p : pu) {
+				if(proj.getBox().intersects(p.getBox())) {
+					proj.setActivity(false);
+				}
 			}
 		}
 	}

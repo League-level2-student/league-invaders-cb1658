@@ -41,6 +41,8 @@ public class Alien extends GameObject{
 	public void draw(Graphics g) {
 		if (gotImage) {
 			g.drawImage(image, x, y, width, height, null);
+			// g.setColor(Color.RED); 
+			// g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 		} else {
 			g.setColor(Color.BLUE);
 			g.fillRect(x, y, width, height);

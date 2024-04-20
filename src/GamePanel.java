@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	ObjectManager om = new ObjectManager(rocket,this);
 	
 	public GamePanel() {
-		frameDraw = new Timer(om.getSpeed(), this);
+		frameDraw = new Timer(23, this); // CHANGED FROM om.getSpeed() --> 23
 		frameDraw.start();
 	}
 	
@@ -68,7 +68,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		
 		
-		if(!speedCalibrated) {
+		/* if(!speedCalibrated) {
 			
 			frameDraw.setDelay(25);
 			frameDraw.restart();
@@ -76,7 +76,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			speedCalibrated = true;
 			
 			
-		}
+		} */  // SPEED CHANGER
 	}
 	
 	public void updateGameState() {

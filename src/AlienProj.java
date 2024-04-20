@@ -20,11 +20,6 @@ public class AlienProj extends Projectile{
 		
 		speed = 7;
 		
-		
-		
-		
-		
-		
 		rocket =r;
 	}
 	
@@ -44,6 +39,8 @@ public class AlienProj extends Projectile{
 	public void draw(Graphics g) {
 	
 			g.drawImage(alienProjImage, x, y, width, height, null);
+			// g.setColor(Color.RED); 
+			// g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 		
 	}
 	
