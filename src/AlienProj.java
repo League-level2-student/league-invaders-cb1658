@@ -43,6 +43,10 @@ public class AlienProj extends Projectile{
 			// g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 		
 	}
+	public void drawBox(Graphics g) {
+		g.setColor(Color.RED); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
+	}
 	
 	public void update() {
 		y+=speed;

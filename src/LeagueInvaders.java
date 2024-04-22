@@ -75,14 +75,14 @@ public class LeagueInvaders {
  * v1.3.1: Good Ammo now has a plus sign. Bad ammo added. Removes 30 ammo and has minus sign. 
  * v1.3.2: Fixed issue where negative ammo caused by bad ammo can make reload happen forever.
  * 		   You can no longer pick up ammo powerups/debuffs when reloading
- * 
+ *
  * v1.4-pre1: Aliens will now shoot homing projectiles at random.
  * v1.4-pre2: Collision box now fits the rocket better. 
  * v1.4-pre3: Powerups now destroy alien projectiles. Speed change disabled for the time being. 
  * 			  DEBUG: Hitboxes can be shown by uncommenting lines.
  * v1.4-pre4: Ammunitions amount is in the form of a bar. 
  * v1.4: You can now destroy alien projectiles using rocket projectiles (ugh). Powerups now fill ammo bar and stop reloading. Bammo is much faster now.
- * 		 
+ * v1.4.1: DEBUG: You can now toggle hitboxes using the H key. 	 
  * 
  * THINGS TO BE DONE: 
  * 
@@ -90,6 +90,6 @@ public class LeagueInvaders {
  * -Add Menus for different difficulties (v1.4)
  * -Add a leaderboard of highscores with initials (v1.4)
  * -Add different bullets: buckshot, shrapnel (v1.4)
- *  -Add explosion animation (v1.5)
+ * -Add explosion animation (v1.5)
  * 
  */

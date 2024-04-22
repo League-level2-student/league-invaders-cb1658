@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 
@@ -38,12 +39,16 @@ public class Projectile extends GameObject{
 	public void draw(Graphics g) {
 		if (gotImage) {
 			g.drawImage(image, x, y, width, height, null);
-			// g.setColor(Color.GREEN); 
-			// g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
+			
 		} else {
 			g.setColor(Color.BLUE);
 			g.fillRect(x, y, width, height);
 		}
+	}
+	
+	public void drawBox(Graphics g) {
+		g.setColor(Color.YELLOW); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 	}
 	public void update() {
 		y-=speed;

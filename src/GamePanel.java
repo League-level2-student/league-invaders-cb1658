@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	ObjectManager om = new ObjectManager(rocket,this);
 	
 	public GamePanel() {
-		frameDraw = new Timer(20, this); // CHANGED FROM om.getSpeed() --> 23
+		frameDraw = new Timer(20, this); // CHANGED FROM om.getSpeed() --> 20
 		frameDraw.start();
 	}
 	
@@ -240,6 +240,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == GAME) {
 			
 			om.setShoot(true);
+			
+		}
+		
+		if(e.getKeyCode()== KeyEvent.VK_H && currentState == GAME) {
+			
+			if(!om.getBoxBool()) {
+				om.setBoxBool(true);
+			}
+			else {
+				om.setBoxBool(false);
+			}
 			
 		}
 		

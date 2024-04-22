@@ -63,8 +63,7 @@ public class Rocketship extends GameObject{
 	public void draw(Graphics g) {
 		if (gotImage) {
 			g.drawImage(image, x, y, width, height, null);
-			// g.setColor(Color.GREEN); 
-			// g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
+			
 			
 		} else {
 			g.setColor(Color.BLUE);
@@ -137,5 +136,9 @@ public class Rocketship extends GameObject{
 	}
 	public void setY(int y) {
 		this.y=y;
+	}
+	public void drawBox(Graphics g) {
+		g.setColor(Color.GREEN); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 	}
 }

@@ -46,6 +46,8 @@ public class ObjectManager implements ActionListener{
 	
 	GamePanel gp;
 	
+	boolean isDrawingBox = false;
+	
 	boolean isRocketShooting = false;
 	
 	public ObjectManager(Rocketship r, GamePanel gamePanel) {
@@ -310,9 +312,13 @@ public class ObjectManager implements ActionListener{
 			g.drawString("Powerups left: " + getP(), 25,150);
 		}
 		
+		if(isDrawingBox) {
+			drawBoxes(g);
+		}
+		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4", 10,990);
+		g.drawString("1.4.1", 10,990);
 		
 	}
 	
@@ -326,6 +332,45 @@ public class ObjectManager implements ActionListener{
 	
 	public int getScore() {
 		return this.score;
+	}
+	
+	public void setBoxBool(boolean b) {
+		isDrawingBox = b;
+	}
+	public boolean getBoxBool() {
+		return isDrawingBox;
+	}
+	
+	public void drawBoxes(Graphics g) {
+		for(Alien alien : aliens) {
+			alien.drawBox(g);
+		}
+		for(Projectile proj: projectiles) {
+			proj.drawBox(g);
+		}
+		for(DiagonalAlien diaalien : diaaliens) {
+			diaalien.drawBox(g);
+		}
+		for(Weirdos ww : w) {
+			ww.drawBox(g);
+		}
+		for(Powerup p : pu) {
+			p.drawBox(g);
+		}
+		
+		for(Ammo a : am) {
+			a.drawBox(g);
+		}
+		
+		for(Ammo b : bam) {
+			b.drawBox(g);
+		}
+		
+		for(AlienProj proj : ap) {
+			proj.drawBox(g);
+		}
+		
+		rocket.drawBox(g);
 	}
 	
 	public void checkCollision() {

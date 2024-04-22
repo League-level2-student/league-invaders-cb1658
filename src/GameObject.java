@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public class GameObject {
@@ -49,5 +51,9 @@ public class GameObject {
 	}
 	public void setSpeed(int s) {
 		this.speed = s;
+	}
+	public void drawBox(Graphics g) {
+		g.setColor(Color.RED); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
 	}
 }
