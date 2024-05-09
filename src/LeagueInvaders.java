@@ -34,7 +34,7 @@ public class LeagueInvaders {
 	
 }
 
-/* DEVELOPMENT VERSION LIST (for the fun of it)
+/* VERSION 0/1 PATCH NOTES
  * 
  * v0.0: Menu
  * v0.1: Key Detection
@@ -84,12 +84,27 @@ public class LeagueInvaders {
  * v1.4: You can now destroy alien projectiles using rocket projectiles (ugh). Powerups now fill ammo bar and stop reloading. Bammo is much faster now.
  * v1.4.1: DEBUG: You can now toggle hitboxes using the H key. 	 
  * 
- * THINGS TO BE DONE: 
+ * v1.4.2: Welcome to the final version of the v1 branch! From now on, versions will be contributing to the v2 branch.
+ * For this final update of v1, we added "Alien Cohorts." They are 15 dia-aliens which appear randomly between y 0-200 (the top of the screen.)
+ * They emit red particles which (as of now) do nothing. 
+ * ---------------------------------------------------------------------------------------
+ */
+
+/*	VERSION 2 PATCH NOTES
  * 
- * -Add indestructable alien (v1.4)
- * -Add Menus for different difficulties (v1.4)
- * -Add a leaderboard of highscores with initials (v1.4)
- * -Add different bullets: buckshot, shrapnel (v1.4)
- * -Add explosion animation (v1.5)
  * 
+ * 
+ * ---------------------------------------------------------------------------------------
+*/
+
+/*
+ *  THINGS TO BE DONE: 
+ * 
+ * -Add indestructable alien
+ * -Add Menus for different difficulties
+ * -Add a leaderboard of highscores with initials
+ * -Add different bullets: buckshot, shrapnel
+ * -Add explosion animation
+ * 
+ * --------------------------------------------------------------------------------------
  */

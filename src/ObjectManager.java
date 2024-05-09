@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class ObjectManager implements ActionListener{
 	ArrayList<BadAmmo> bam = new ArrayList<BadAmmo>();
 	
 	ArrayList<AlienProj> ap = new ArrayList<AlienProj>();
+	
+	ArrayList<RedParticle> rp = new ArrayList<RedParticle>();
 	
 	Random rand = new Random ();
 	
@@ -142,6 +145,9 @@ public class ObjectManager implements ActionListener{
 	public void addDia_Alien(int x) {
 		diaaliens.add(new DiagonalAlien(x,-50,80,50));
 	}
+	public void addDia_Alien(int x, int y) {
+		diaaliens.add(new DiagonalAlien(x,y,80,50));
+	}
 	
 	public void update() {
 		
@@ -204,6 +210,23 @@ public class ObjectManager implements ActionListener{
 			
 			if(ap.get(i).getY() > LeagueInvaders.HEIGHT) {
 				ap.get(i).setActivity(false);
+			}
+		}
+		
+		for(int i = 0; i < rp.size(); i++) {
+			rp.get(i).update();
+			
+			if(rp.get(i).getX() > 10000) {
+				rp.remove(i);
+			}
+			if(rp.get(i).getX() < -10000) {
+				rp.remove(i);
+			}
+			if(rp.get(i).getY() > 10000) {
+				rp.remove(i);
+			}
+			if(rp.get(i).getX() < -10000) {
+				rp.remove(i);
 			}
 		}
 		
@@ -272,6 +295,10 @@ public class ObjectManager implements ActionListener{
 			proj.draw(g);
 		}
 		
+		for(RedParticle r_p : rp) {
+			r_p.draw(g);
+		}
+		
 		rocket.draw(g);
 		
 		g.setColor(Color.WHITE);
@@ -318,7 +345,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4.1", 10,990);
+		g.drawString("1.4.2", 10,990);
 		
 	}
 	
@@ -483,11 +510,23 @@ public class ObjectManager implements ActionListener{
 				}
 			}
 		}
+		
+		for(RedParticle redP : rp) {
+			for(Powerup p : pu) {
+				if(p.getBox().contains(new Point(redP.getX(),redP.getY()))) {
+					redP.setActivity(false);
+				}
+			}
+		}
 	}
 	
 	
 	public void addPU(Powerup p) {
 		pu.add(p);
+	}
+	
+	public void addRP(int x, int y, int type) {
+		rp.add(new RedParticle(x,y,type));
 	}
 	public void purgeObjects() {
 		for(int i = aliens.size()-1; i >= 0; i--) {
@@ -529,6 +568,12 @@ public class ObjectManager implements ActionListener{
 				ap.remove(i);
 			}
 		}
+		
+		for(int i = rp.size()-1; i >= 0; i--) {
+			if(rp.get(i).getActive() == false) {
+				rp.remove(i);
+			}
+		}
 	}
 	
 	public void gone() {
@@ -566,6 +611,10 @@ public class ObjectManager implements ActionListener{
 		for(int i = ap.size()-1; i >= 0; i--) {
 			ap.remove(i);
 		}
+		
+		for(int i = rp.size()-1; i >= 0; i--) {
+			rp.remove(i);
+		}
 	}
 	
 	public void alienWave1() {
@@ -597,6 +646,19 @@ public class ObjectManager implements ActionListener{
 		}
 		for(int i = 0; i < 5; i++) {
 			alienWave3();
+		}
+	}
+	
+	public void alienCohort() {
+		int x = rand.nextInt(970);
+		int y = rand.nextInt(200);
+		
+		for(int i = 0 ; i < 15; i++) {
+			addDia_Alien(x,y);
+		}
+		
+		for(int i = 1; i <= 16; i++) {
+			addRP(x, y, i);
 		}
 	}
 	
@@ -632,9 +694,15 @@ public class ObjectManager implements ActionListener{
 				addAmmo();
 			}
 			
-			  if(rand3 < 20) {
+			if(rand3 < 20) {
 				addBammo();
 			}
+			
+			
+			if(rand2 < 25 && rand3 < 25) {
+				alienCohort();
+			}
+			
 		}
 		
 		for(Alien a : aliens) {
