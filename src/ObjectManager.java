@@ -213,7 +213,7 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
-		for(int i = 0; i < rp.size(); i++) {
+		for(int i = rp.size()-1; i >= 0; i--) {
 			rp.get(i).update();
 			
 			if(rp.get(i).getX() > 10000) {
@@ -345,7 +345,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4.2", 10,990);
+		g.drawString("1.4.3", 10,990);
 		
 	}
 	

@@ -87,6 +87,8 @@ public class LeagueInvaders {
  * v1.4.2: Welcome to the final version of the v1 branch! From now on, versions will be contributing to the v2 branch.
  * For this final update of v1, we added "Alien Cohorts." They are 15 dia-aliens which appear randomly between y 0-200 (the top of the screen.)
  * They emit red particles which (as of now) do nothing. 
+ * 
+ * v1.4.3: A hotfix for an out-of-bounds error caused by red particles.
  * ---------------------------------------------------------------------------------------
  */
 
