@@ -213,7 +213,7 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
-		for(int i = rp.size()-1; i >= 0; i--) {
+		/*for(int i = rp.size()-1; i >= 0; i--) {
 			rp.get(i).update();
 			
 			if(rp.get(i).getX() > 10000) {
@@ -228,7 +228,7 @@ public class ObjectManager implements ActionListener{
 			if(rp.get(i).getX() < -10000) {
 				rp.remove(i);
 			}
-		}
+		}*/
 		
 		if(getAmmunition() <= 0 && (!reloadTimerStarted)) {
 			reload();
