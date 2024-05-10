@@ -653,7 +653,7 @@ public class ObjectManager implements ActionListener{
 		int x = rand.nextInt(970);
 		int y = rand.nextInt(200);
 		
-		for(int i = 0 ; i < 1; i++) {
+		for(int i = 0 ; i < 15; i++) {
 			addDia_Alien(x,y);
 		}
 		
