@@ -345,7 +345,7 @@ public class ObjectManager implements ActionListener{
 		
 		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4.3", 10,990);
+		g.drawString("1.4.4", 10,990);
 		
 	}
 	
@@ -653,7 +653,7 @@ public class ObjectManager implements ActionListener{
 		int x = rand.nextInt(970);
 		int y = rand.nextInt(200);
 		
-		for(int i = 0 ; i < 15; i++) {
+		for(int i = 0 ; i < 1; i++) {
 			addDia_Alien(x,y);
 		}
 		
@@ -702,6 +702,8 @@ public class ObjectManager implements ActionListener{
 			if(rand2 < 25 && rand3 < 25) {
 				alienCohort();
 			}
+			
+			alienCohort();
 			
 		}
 		

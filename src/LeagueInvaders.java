@@ -89,6 +89,7 @@ public class LeagueInvaders {
  * They emit red particles which (as of now) do nothing. 
  * 
  * v1.4.3: A hotfix for an out-of-bounds error caused by red particles.
+ * v1.4.4: Red particles shoot out in a shape of a circle (using trigonometry!)
  * ---------------------------------------------------------------------------------------
  */
 

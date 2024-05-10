@@ -3,18 +3,18 @@ import java.awt.Graphics;
 
 public class RedParticle extends GameObject{
 
-	private int speedX;
-	private int speedY;
+	private double speedX;
+	private double speedY;
 	
 	public RedParticle(int x, int y, int type) {
-		super(x, y,2,2);
+		super(x, y,3,3);
 		// TODO Auto-generated constructor stub
 		
 		switch(type) {
 		
 		case 1: 
-			speedX = 16;
-			speedY = -8;
+			speedX = 16*Math.cos(Math.toRadians(22.5));
+			speedY = 16*Math.sin(Math.toRadians(22.5));
 			break;
 		
 		case 2:
@@ -23,18 +23,18 @@ public class RedParticle extends GameObject{
 			break;
 			
 		case 3:
-			speedX = 16;
-			speedY = 8;
+			speedX = 16*Math.cos(Math.toRadians(337.5));
+			speedY = 16*Math.sin(Math.toRadians(337.5));
 			break;
 		
 		case 4:
-			speedX = 16;
-			speedY = 16;
+			speedX = 16*Math.cos(Math.toRadians(315));
+			speedY = 16*Math.sin(Math.toRadians(315));
 			break;
 			
 		case 5:
-			speedX = 8;
-			speedY = 16;
+			speedX = 16*Math.cos(Math.toRadians(292.5));
+			speedY = 16*Math.sin(Math.toRadians(292.5));
 			break;
 		
 		case 6:
@@ -43,18 +43,18 @@ public class RedParticle extends GameObject{
 			break;
 			
 		case 7:
-			speedX = -8;
-			speedY = 16;
+			speedX = 16*Math.cos(Math.toRadians(247.5));
+			speedY = 16*Math.sin(Math.toRadians(247.5));
 			break;
 		
 		case 8:
-			speedX = -16;
-			speedY = 16;
+			speedX = 16*Math.cos(Math.toRadians(202.5));
+			speedY = 16*Math.sin(Math.toRadians(202.5));
 			break;
 			
 		case 9:
-			speedX = -16;
-			speedY = 8;
+			speedX = 16*Math.cos(Math.toRadians(202.5));
+			speedY = 16*Math.sin(Math.toRadians(202.5));
 			break;
 			
 		case 10:
@@ -63,18 +63,18 @@ public class RedParticle extends GameObject{
 			break;
 			
 		case 11:
-			speedX = -16;
-			speedY = -8;
+			speedX = 16*Math.cos(Math.toRadians(157.5));
+			speedY = 16*Math.sin(Math.toRadians(157.5));
 			break;
 			
 		case 12:
-			speedX = -16;
-			speedY = -16;
+			speedX = 16*Math.cos(Math.toRadians(135));
+			speedY = 16*Math.sin(Math.toRadians(135));
 			break;
 			
 		case 13:
-			speedX = -8;
-			speedY = -16;
+			speedX = 16*Math.cos(Math.toRadians(112.5));
+			speedY = 16*Math.sin(Math.toRadians(112.5));
 			break;
 			
 		case 14:
@@ -83,13 +83,14 @@ public class RedParticle extends GameObject{
 			break;
 			
 		case 15:
-			speedX = 8;
-			speedY = -16;
+			speedX = 16*Math.cos(Math.toRadians(67.5));
+			speedY = 16*Math.sin(Math.toRadians(67.5));
 			break;
 			
 		case 16:        
-			speedX = 16;
-			speedY = -16;
+			speedX = 16*Math.cos(Math.toRadians(45));
+			speedY = 16*Math.sin(Math.toRadians(45));
+			break;
 		}	
 		
 	}
