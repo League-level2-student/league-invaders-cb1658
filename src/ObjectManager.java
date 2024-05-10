@@ -703,8 +703,6 @@ public class ObjectManager implements ActionListener{
 				alienCohort();
 			}
 			
-			alienCohort();
-			
 		}
 		
 		for(Alien a : aliens) {
