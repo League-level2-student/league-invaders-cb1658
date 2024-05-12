@@ -347,7 +347,7 @@ public class ObjectManager implements ActionListener{
 		
 		if(!gp.isExperimental()) {
 			g.setColor(Color.WHITE);
-			g.drawString("1.4.5-pre1", 10,990);
+			g.drawString("1.4.5", 10,990);
 		}
 		else {
 			g.setColor(new Color(0, 235, 255));
@@ -525,6 +525,12 @@ public class ObjectManager implements ActionListener{
 				if(p.getBox().contains(new Point(redP.getX(),redP.getY()))) {
 					redP.setActivity(false);
 				}
+			}
+			
+			if(rocket.getBox().intersects(redP.getBox())) {
+				ammunitionLeft -=30;
+				
+				redP.setActivity(false);
 			}
 		}
 	}

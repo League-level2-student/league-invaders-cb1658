@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class RedParticle extends GameObject{
 
@@ -7,7 +8,7 @@ public class RedParticle extends GameObject{
 	private double speedY;
 	
 	public RedParticle(int x, int y, int type) {
-		super(x, y,3,3);
+		super(x, y,26,26);
 		// TODO Auto-generated constructor stub
 		
 		switch(type) {
@@ -92,17 +93,27 @@ public class RedParticle extends GameObject{
 			speedY = 16*Math.sin(Math.toRadians(45));
 			break;
 		}	
-		
 	}
 	
 	public void draw(Graphics g) {
-		g.setColor(new Color(255,0,0));
-		g.fillOval(x, y, 7, 7);
+		g.setColor(new Color(240,50,50));
+		g.fillRect(x,y,width,height);
+		
+		g.drawLine(x+13, y+2, x+13, y+24);
+		g.setColor(new Color(255,150,150));
+		
+		g.fillRect(x+2, y+11, width-4, 4);
 	}
 	
 	public void update() {
 		x += speedX;
 		y += speedY;
+		
+		collisionBox = new Rectangle(x,y,width,height);
+	}
+	
+	public Rectangle getBox() {
+		return collisionBox;
 	}
 	
 }
