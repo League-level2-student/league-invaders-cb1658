@@ -95,7 +95,7 @@ public class LeagueInvaders {
 
 /*	VERSION 2 PATCH NOTES
  * 
- *  
+ *  v1.4.5-pre1: Version 2.0 Experiment Toggle can be activated using E.
  * 
  * ---------------------------------------------------------------------------------------
 */

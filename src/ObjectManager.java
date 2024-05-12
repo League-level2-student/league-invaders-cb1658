@@ -343,9 +343,18 @@ public class ObjectManager implements ActionListener{
 			drawBoxes(g);
 		}
 		
-		g.setColor(Color.WHITE);
 		
-		g.drawString("1.4.4", 10,990);
+		
+		if(!gp.isExperimental()) {
+			g.setColor(Color.WHITE);
+			g.drawString("1.4.5-pre1", 10,990);
+		}
+		else {
+			g.setColor(new Color(0, 235, 255));
+			g.drawString("2.0-EXPERIMENT.1", 10,990);
+		}
+		
+		
 		
 	}
 	

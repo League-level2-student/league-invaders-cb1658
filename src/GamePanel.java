@@ -31,6 +31,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	
 	ObjectManager om = new ObjectManager(rocket,this);
 	
+	boolean experimentalToggle = false;
+	
 	public GamePanel() {
 		frameDraw = new Timer(20, this); // CHANGED FROM om.getSpeed() --> 20
 		frameDraw.start();
@@ -99,12 +101,30 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
 	}
 	
+	public boolean isExperimental() {
+		return experimentalToggle;
+	}
+	
 	public void drawMenuState(Graphics g) {
-		g.setColor(new Color(0, 255, 145));
+		
+		if(!experimentalToggle) {
+			g.setColor(new Color(0, 255, 145));
+		}
+		else {
+			g.setColor(new Color(0, 235, 255));
+		}
+		
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
 		g.setFont(tf);
 		g.setColor(Color.BLUE);
-		g.drawString("BETTER INVADERS", 200, 100);
+		
+		if(experimentalToggle) {
+			g.drawString("BETTER INVADERS 2.0", 100, 100);
+		}
+		else{
+			g.drawString("BETTER INVADERS", 200, 100);
+		}
+		
 		g.setFont(of);
 		g.drawString("Press ENTER to start!", 380, 500);
 		g.drawString("Press SPACE if you need help!", 310, 600);
@@ -195,6 +215,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			JOptionPane.showMessageDialog(null, "Press SHIFT to launch a powerup.");
 			JOptionPane.showMessageDialog(null, "If you hate this game, press Q. Ugh why do I even have to say this.");
 			JOptionPane.showMessageDialog(null, "That's it! Have fun...");
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_E && currentState == 0) {
+			experimentalToggle = !experimentalToggle;
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == 2) {
