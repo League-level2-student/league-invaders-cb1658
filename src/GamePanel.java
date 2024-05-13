@@ -119,7 +119,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		g.setColor(Color.BLUE);
 		
 		if(experimentalToggle) {
-			g.drawString("BETTER INVADERS 2.0", 100, 100);
+			g.drawString("BETTER INVADERS", 200, 100);
+			g.drawString("EXPERIMENTAL VERSION", 50,200);
 		}
 		else{
 			g.drawString("BETTER INVADERS", 200, 100);
