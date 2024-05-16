@@ -97,6 +97,8 @@ public class LeagueInvaders {
  * 
  *  v1.4.5-pre1: Version 2.0 Experiment Toggle can be activated using E.
  *  v1.4.5: Red Particles are now bammo
+ *  
+ *  2.0 Experiment 1: Alien boss has been added (with minimal functionality)
  * 
  * ---------------------------------------------------------------------------------------
 */
