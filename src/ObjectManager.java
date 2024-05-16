@@ -27,6 +27,8 @@ public class ObjectManager implements ActionListener{
 	
 	ArrayList<RedParticle> rp = new ArrayList<RedParticle>();
 	
+	ArrayList<Boss> boss = new ArrayList<Boss>();
+	
 	Random rand = new Random ();
 	
 	Timer reloadTimer = new Timer(5000,this);
@@ -230,6 +232,14 @@ public class ObjectManager implements ActionListener{
 			}
 		}
 		
+		for(int i = 0; i<boss.size(); i++) {
+			boss.get(i).update();
+			
+			if(boss.get(i).getY() > LeagueInvaders.HEIGHT) {
+				boss.get(i).setActivity(false);
+			}
+		}
+		
 		if(getAmmunition() <= 0 && (!reloadTimerStarted)) {
 			reload();
 		}
@@ -297,6 +307,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(RedParticle r_p : rp) {
 			r_p.draw(g);
+		}
+		
+		for(Boss b : boss) {
+			b.draw(g);
 		}
 		
 		rocket.draw(g);
@@ -716,6 +730,10 @@ public class ObjectManager implements ActionListener{
 			
 			if(rand2 < 25 && rand3 < 25) {
 				alienCohort();
+			}
+			
+			if(gp.isExperimental() && score > 10 && boss.size() == 0) {
+				boss.add(new Boss());
 			}
 			
 		}
