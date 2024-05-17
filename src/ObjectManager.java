@@ -365,7 +365,7 @@ public class ObjectManager implements ActionListener{
 		}
 		else {
 			g.setColor(new Color(0, 235, 255));
-			g.drawString("2.0-EXPERIMENT.1", 10,990);
+			g.drawString("2.0-EXPERIMENT.2", 10,990);
 		}
 		
 		
@@ -418,6 +418,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(AlienProj proj : ap) {
 			proj.drawBox(g);
+		}
+		
+		for(Boss boss: boss) {
+			boss.drawBox(g);
 		}
 		
 		rocket.drawBox(g);
@@ -547,6 +551,30 @@ public class ObjectManager implements ActionListener{
 				redP.setActivity(false);
 			}
 		}
+		
+		for(Boss b: boss) {
+			for(Powerup p : pu) {
+				if(p.getBox().intersects(b.getBox())) {
+					b.powerupDamage();
+					p.setActivity(false);
+				}
+			}
+			
+			for(Projectile p : projectiles) {
+				if(p.getBox().intersects(b.getBox())) {
+					b.takeDamage();
+					p.setActivity(false);
+				}
+			}
+			
+			if(b.getHealth() <= 0) {
+				b.setActivity(false);
+			}
+			
+			if(rocket.getBox().intersects(b.getBox())) {
+				rocket.setActivity(false);
+			}
+		}
 	}
 	
 	
@@ -603,6 +631,18 @@ public class ObjectManager implements ActionListener{
 				rp.remove(i);
 			}
 		}
+		
+		for(int i = boss.size()-1; i >= 0; i--) {
+			if(boss.get(i).getActive() == false) {
+				boss.remove(i);
+			}
+		}
+		
+		for(int i = pu.size()-1; i >= 0 ; i--) {
+			if(pu.get(i).getActive() == false) {
+				pu.remove(i);
+			}
+		}
 	}
 	
 	public void gone() {
@@ -643,6 +683,10 @@ public class ObjectManager implements ActionListener{
 		
 		for(int i = rp.size()-1; i >= 0; i--) {
 			rp.remove(i);
+		}
+		
+		for(int i = boss.size()-1; i >= 0; i--) {
+			boss.remove(i);
 		}
 	}
 	
@@ -695,27 +739,31 @@ public class ObjectManager implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == alienSpawn) {
-			addAlien();
+			
+			
+			if(boss.size() == 0) {
+				addAlien();
+			}
 			
 			int rand_ = rand.nextInt(100);
 
-			if(rand_ < 25) {
+			if(rand_ < 25 && boss.size() == 0) {
 				alienWave1();
 			}
 			
 			int rand2 = rand.nextInt(100);
 			
-			if(rand2 < 15) {
+			if(rand2 < 15 && boss.size() == 0) {
 				alienWave2();
 			}
 			
 			int rand3 = rand.nextInt(100);
 			
-			if(rand3 < 10) {
+			if(rand3 < 10 && boss.size() == 0) {
 				alienWave3();
 			}
 			
-			if(rand_ < 5 && rand2 < 80 && rand3 < 50) {
+			if(rand_ < 5 && rand2 < 80 && rand3 < 50 && boss.size() == 0) {
 				thisWaveWillEndYouForSure();
 			}
 			
@@ -723,12 +771,12 @@ public class ObjectManager implements ActionListener{
 				addAmmo();
 			}
 			
-			if(rand3 < 20) {
+			if(rand3 < 20 && boss.size() == 0) {
 				addBammo();
 			}
 			
 			
-			if(rand2 < 25 && rand3 < 25) {
+			if(rand2 < 25 && rand3 < 25 && boss.size() == 0) {
 				alienCohort();
 			}
 			
