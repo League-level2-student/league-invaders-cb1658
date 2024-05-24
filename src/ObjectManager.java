@@ -361,7 +361,7 @@ public class ObjectManager implements ActionListener{
 		
 		if(!gp.isExperimental()) {
 			g.setColor(Color.WHITE);
-			g.drawString("1.4.5", 10,990);
+			g.drawString("1.4.6", 10,990);
 		}
 		else {
 			g.setColor(new Color(0, 235, 255));

@@ -100,6 +100,7 @@ public class LeagueInvaders {
  *  
  *  v2.0 Experiment 1: Alien boss has been added (with minimal functionality)
  *  v2.0 Experiment 2: Alien boss has collision detection and a health bar. 
+ *  v1.4.6: Alien Cohort Particle Patch
  * 
  * ---------------------------------------------------------------------------------------
 */
