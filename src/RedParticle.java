@@ -49,8 +49,8 @@ public class RedParticle extends GameObject{
 			break;
 		
 		case 8:
-			speedX = 16*Math.cos(Math.toRadians(202.5));
-			speedY = 16*Math.sin(Math.toRadians(202.5));
+			speedX = 16*Math.cos(Math.toRadians(225));
+			speedY = 16*Math.sin(Math.toRadians(225));
 			break;
 			
 		case 9:

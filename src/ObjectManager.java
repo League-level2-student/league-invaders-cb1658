@@ -581,7 +581,7 @@ public class ObjectManager implements ActionListener{
 	public void addPU(Powerup p) {
 		pu.add(p);
 	}
-	
+
 	public void addRP(int x, int y, int type) {
 		rp.add(new RedParticle(x,y,type));
 	}
@@ -739,8 +739,7 @@ public class ObjectManager implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == alienSpawn) {
-			
-			
+
 			if(boss.size() == 0) {
 				addAlien();
 			}
