@@ -325,11 +325,7 @@ public class ObjectManager implements ActionListener{
 		}
 		
 		if(getAmmunition() < 26) {
-			g.setColor(Color.ORANGE);
-		}
-		
-		if(getAmmunition() < 11) {
-			g.setColor(new Color(255,100,0));
+			g.setColor(new Color(255, Math.abs(165-6*(25-getAmmunition()))%256,0));
 		}
 		
 		if(getAmmunition() <= 0 || isReloading()) {
