@@ -102,7 +102,7 @@ public class LeagueInvaders {
  *  v2.0 Experiment 2: Alien boss has collision detection and a health bar. 
  *  v1.4.6: Alien Cohort Particle Patch
  *  
- *  v1.4.7: Alient Projectiles now go faster when they are farther away from you. Fade effect for low ammo amounts added.
+ *  v1.4.7: Alien Projectiles now go faster when they are farther away from you. Fade effect for low ammo amounts added.
  * 
  * ---------------------------------------------------------------------------------------
 */
