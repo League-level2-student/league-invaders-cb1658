@@ -20,4 +20,8 @@ public class Ammo extends Alien{
 		}
 	}
 
+	public void drawBox(Graphics g) {
+		g.setColor(Color.GREEN); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
+	}
 }

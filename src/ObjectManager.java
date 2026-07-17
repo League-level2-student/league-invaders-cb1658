@@ -357,7 +357,7 @@ public class ObjectManager implements ActionListener{
 		
 		if(!gp.isExperimental()) {
 			g.setColor(Color.WHITE);
-			g.drawString("1.4.6", 10,990);
+			g.drawString("1.4.8", 10,990);
 		}
 		else {
 			g.setColor(new Color(0, 235, 255));
@@ -783,7 +783,7 @@ public class ObjectManager implements ActionListener{
 		
 		for(Alien a : aliens) {
 			
-			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 25) {
+			if(rand.nextInt(100) < 2 && rand.nextInt(100) < 15 && !(a.getY() > rocket.getY())) {
 				addAP(a.getX(),a.getY());
 			}
 			

@@ -14,7 +14,7 @@ public class AlienProj extends Projectile{
 		loadImage2("Alien.png");
 	}
 	
-	boolean slowedDown = false;
+	boolean pastRocket = false;
 	
 	public AlienProj(int x, int y, int width, int height, Rocketship r) {
 		super(x, y, width, height);
@@ -54,24 +54,30 @@ public class AlienProj extends Projectile{
 		
 		if(y > rocket.getY()) {
 			
-			if(!slowedDown) {
+			if(!pastRocket) {
 				speed*=2;
-				speed/=3;
-				slowedDown = true;
+				pastRocket = true;
 			}
 			y+=speed;
 		}else {
 			y+=speed;
 		}
 		
-		if(x > rocket.getX()) {
+		if(x > rocket.getX() + rocket.width/2 - this.width/2 && !pastRocket) {
 			x -= 4+0.02*(x-rocket.getX());
 		}
 		
-		if(x < rocket.getX()) {
+		if(x < rocket.getX() + rocket.width/2 - this.width/2 && !pastRocket) {
 			x +=4+0.02*(rocket.getX()-x); 
 	  	}
 		
+		if(x > rocket.getX() + rocket.width/2 - this.width/2 && pastRocket) {
+			x -= 4+0.01*(x-rocket.getX());
+		}
+		
+		if(x < rocket.getX() + rocket.width/2 - this.width/2 && pastRocket) {
+			x +=4+0.01*(rocket.getX()-x); 
+	  	}
 		collisionBox.setBounds(x, y, width, height);
 	}
 	
