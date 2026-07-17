@@ -20,5 +20,10 @@ public class BadAmmo extends Ammo{
 			g.fillRect(x+2, y+11, width-4, 4);
 		}
 	}
+	
+	public void drawBox(Graphics g) {
+		g.setColor(Color.RED); 
+		g.drawRect((int)collisionBox.getX(), (int)collisionBox.getY(), (int)collisionBox.getWidth(), (int)collisionBox.getHeight()); 
+	}
 
 }
